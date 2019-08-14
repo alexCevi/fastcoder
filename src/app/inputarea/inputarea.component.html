@@ -1,0 +1,8 @@
+<!-- input -->
+<input #codeSet  placeholder="enter code" ><br><br>
+<!-- submit button -->
+<button (click)="newCodeEntered(codeSet.value)" >Submit code</button><br><br>
+<!-- display entered code -->
+<h2>{{ displayCode }}</h2><br><br>
+<!-- input area -->
+<input (keyup)='onKey($event)' [(ngModel)]="codeInput"  placeholder="enter the code you see above"><br>
