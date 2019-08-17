@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomecontainerComponent } from './homecontainer/homecontainer.component';
 import { ExercisecontainerComponent } from './exercisecontainer/exercisecontainer.component';
 import { TopinfoComponent } from './topinfo/topinfo.component';
+import { JsexerciseComponent } from './jsexercise/jsexercise.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TopinfoComponent } from './topinfo/topinfo.component';
     HeaderComponent,
     HomecontainerComponent,
     ExercisecontainerComponent,
-    TopinfoComponent
+    TopinfoComponent,
+    JsexerciseComponent
   ],
   imports: [
     BrowserModule,
