@@ -13,8 +13,11 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-around;
-    margin-left: 5%;
-    margin-right: 5%;
+    justify-content: flex-start;
+    margin-left: 15%;
+    margin-right: 15%;
+    .flex-item {
+      margin: 1%;
+    }
   }
 }
