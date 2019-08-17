@@ -7,3 +7,9 @@ body {
   padding: 0;
   background-image: linear-gradient(to right, $brandBlue, $brandGreen);
 }
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}

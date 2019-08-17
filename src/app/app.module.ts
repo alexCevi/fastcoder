@@ -8,6 +8,8 @@ import { HomecontainerComponent } from './homecontainer/homecontainer.component'
 import { ExercisecontainerComponent } from './exercisecontainer/exercisecontainer.component';
 import { TopinfoComponent } from './topinfo/topinfo.component';
 import { JsexerciseComponent } from './jsexercise/jsexercise.component';
+import { ExerciseareaComponent } from './exercisearea/exercisearea.component';
+import { ExerciseDataProviderService } from './services/exercise-data-provider.service';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,14 @@ import { JsexerciseComponent } from './jsexercise/jsexercise.component';
     HomecontainerComponent,
     ExercisecontainerComponent,
     TopinfoComponent,
-    JsexerciseComponent
+    JsexerciseComponent,
+    ExerciseareaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ExerciseDataProviderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

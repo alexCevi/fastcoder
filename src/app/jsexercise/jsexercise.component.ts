@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ExerciseDataProviderService } from '../services/exercise-data-provider.service';
 
 @Component({
   selector: 'app-jsexercise',
   templateUrl: './jsexercise.component.html',
   styleUrls: ['./jsexercise.component.scss']
 })
-export class JsexerciseComponent implements OnInit {
+export class JsexerciseComponent {
 
-  constructor() { }
+  constructor(public jsSettingSelection: ExerciseDataProviderService) { }
 
-  ngOnInit() {
+  setExerciseAsJs() {
+    const jsExerciseData = ['array one', 'array two'];
+    this.jsSettingSelection.testingDataPass('JavaScript', jsExerciseData);
   }
 
 }
