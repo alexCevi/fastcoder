@@ -9,10 +9,16 @@ export class ExerciseDataProviderService {
 
   exerciseTitle: string;
   exerciseData: string[];
+  currentDisplayedExercise: string;
+  currentQuestion = 0;
 
-  testingDataPass(exerciseName: string, exerciseData: string[]) {
-    this.exerciseTitle = exerciseName;
+  setExerciseData(exerviseTitle: string, exerciseData: string[]) {
+    this.exerciseTitle = exerviseTitle;
     this.exerciseData = exerciseData;
+  }
 
+  updateExerciseData() {
+    this.currentDisplayedExercise = this.exerciseData[this.currentQuestion];
+    this.currentQuestion++;
   }
 }

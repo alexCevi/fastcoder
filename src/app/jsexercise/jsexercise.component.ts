@@ -11,8 +11,8 @@ export class JsexerciseComponent {
   constructor(public jsSettingSelection: ExerciseDataProviderService) { }
 
   setExerciseAsJs() {
-    const jsExerciseData = ['array one', 'array two'];
-    this.jsSettingSelection.testingDataPass('JavaScript', jsExerciseData);
+    const jsExerciseData = ['array zero', 'array one'];
+    this.jsSettingSelection.setExerciseData('JavaScript', jsExerciseData);
   }
 
 }

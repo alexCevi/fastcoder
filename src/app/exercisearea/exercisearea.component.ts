@@ -10,42 +10,25 @@ export class ExerciseareaComponent implements OnInit {
 
   topTitle: string;
   exerciseDataFromService: string[];
-  exerciseDataDisplay: string;
+  exerciseDataDisplay: any;
   userDataInput: string;
 
+  constructor(public exerciseService: ExerciseDataProviderService) { }
 
-  // topTitle: string;
-  // exerciseData: string;
-
-  constructor(public setExerciseType: ExerciseDataProviderService) { }
-
-  displayExercise(exerciseData: string[]) {
-    let i = 0;
-    this.exerciseDataDisplay = exerciseData[i];
-    i++;
-  }
-
-  validateResponse(userInput: string) {
-    if (userInput === this.exerciseDataDisplay) {
+  validateResponse(userInputData: string) {
+    if (userInputData === this.exerciseService.currentDisplayedExercise) {
       console.log('valid');
-      this.displayExercise(this.exerciseDataFromService);
+      this.exerciseService.updateExerciseData();
+      this.exerciseDataDisplay = this.exerciseService.currentDisplayedExercise;
     } else {
-      console.log('not valid');
+      console.log('not working');
     }
   }
 
-
-  startExercise() {
-    this.displayExercise(this.exerciseDataFromService);
-  }
-
   ngOnInit() {
-    this.topTitle = this.setExerciseType.exerciseTitle;
-    this.exerciseDataFromService = this.setExerciseType.exerciseData;
-
-    // TESTING DATA REMOVE FROM PROD
-    // this.topTitle = "JavaScript";
-    // this.exerciseData = "DATA ONE";
+    this.topTitle = this.exerciseService.exerciseTitle;
+    this.exerciseService.updateExerciseData();
+    this.exerciseDataDisplay = this.exerciseService.currentDisplayedExercise;
   }
 
 
