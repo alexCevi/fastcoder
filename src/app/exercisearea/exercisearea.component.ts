@@ -9,19 +9,45 @@ import { ExerciseDataProviderService } from '../services/exercise-data-provider.
 export class ExerciseareaComponent implements OnInit {
 
   topTitle: string;
-  exerciseData: string[];
+  exerciseDataFromService: string[];
+  exerciseDataDisplay: string;
+  userDataInput: string;
+
 
   // topTitle: string;
   // exerciseData: string;
 
   constructor(public setExerciseType: ExerciseDataProviderService) { }
 
+  displayExercise(exerciseData: string[]) {
+    let i = 0;
+    this.exerciseDataDisplay = exerciseData[i];
+    i++;
+  }
+
+  validateResponse(userInput: string) {
+    if (userInput === this.exerciseDataDisplay) {
+      console.log('valid');
+      this.displayExercise(this.exerciseDataFromService);
+    } else {
+      console.log('not valid');
+    }
+  }
+
+
+  startExercise() {
+    this.displayExercise(this.exerciseDataFromService);
+  }
+
   ngOnInit() {
     this.topTitle = this.setExerciseType.exerciseTitle;
-    this.exerciseData = this.setExerciseType.exerciseData;
+    this.exerciseDataFromService = this.setExerciseType.exerciseData;
 
+    // TESTING DATA REMOVE FROM PROD
     // this.topTitle = "JavaScript";
     // this.exerciseData = "DATA ONE";
   }
 
+
 }
+

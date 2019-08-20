@@ -5,10 +5,12 @@
   </div>
   <div class="exerciseWrapper">
     <div id="questionCardContainer" class="exerciseDataDisply">
-      <h2>{{ exerciseData }}</h2>
+      <h2>{{ exerciseDataDisplay }}</h2>
     </div>
     <div class="inputArea">
-      <input placeholder="type in here" />
+      <input #userInput placeholder="type in here" />
     </div>
+    <button (click)="startExercise()">CLICK ME</button>
+    <button (click)="validateResponse(userInput.value)">VALIDATION</button>
   </div>
 </div>
