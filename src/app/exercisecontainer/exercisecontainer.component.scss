@@ -1,5 +1,8 @@
 @import "../scss/main";
 .componentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h1 {
     text-align: center;
     padding-top: 5%;
@@ -13,8 +16,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: flex-start;
-    margin-left: 10rem;
+    width: 70%;
     .flex-item {
       margin: 1%;
     }
