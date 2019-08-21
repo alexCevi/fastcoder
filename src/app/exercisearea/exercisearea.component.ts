@@ -17,14 +17,12 @@ export class ExerciseareaComponent implements OnInit {
   constructor(public exerciseService: ExerciseDataProviderService) { }
 
   validateInput(event: any) {
-    console.log(event.target.value);
     if (this.exerciseDataDisplay === event.target.value) {
       this.exerciseService.updateExerciseData();
       this.exerciseDataDisplay = this.exerciseService.currentDisplayedExercise;
       this.clearData = '';
-      console.log('should be working');
     } else {
-      console.log('not working');
+      // TODO ADD SHAKE ANIMATION FOR WRONG ANSWER
     }
   }
 
@@ -32,7 +30,6 @@ export class ExerciseareaComponent implements OnInit {
     this.topTitle = this.exerciseService.exerciseTitle;
     this.exerciseService.updateExerciseData();
     this.exerciseDataDisplay = this.exerciseService.currentDisplayedExercise;
-    console.log(this.exerciseDataDisplay.split('').splice(-1).pop());
   }
 
 
