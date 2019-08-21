@@ -8,8 +8,14 @@
       <h2>{{ exerciseDataDisplay }}</h2>
     </div>
     <div class="inputArea">
-      <input #userInput placeholder="type in here" />
+      <input
+        (keyup)="validateInput($event)"
+        #userInput
+        name="clearData"
+        [(ngModel)]="clearData"
+        placeholder="type in here"
+      />
     </div>
-    <button (click)="validateResponse(userInput.value)">VALIDATION</button>
+    <button>VALIDATION</button>
   </div>
 </div>
