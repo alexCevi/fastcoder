@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ExerciseDataProviderService } from '../services/exercise-data-provider.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-exercisearea',
@@ -14,7 +15,7 @@ export class ExerciseareaComponent implements OnInit {
   userDataInput: string;
   clearData: string;
 
-  constructor(public exerciseService: ExerciseDataProviderService) { }
+  constructor(public exerciseService: ExerciseDataProviderService, private router: Router) { }
 
   validateInput(event: any) {
     if (this.exerciseDataDisplay === event.target.value) {
@@ -23,6 +24,7 @@ export class ExerciseareaComponent implements OnInit {
       this.clearData = '';
     } else {
       // TODO ADD SHAKE ANIMATION FOR WRONG ANSWER
+      // TODO ADD RED GLOW ON CARD
     }
   }
 
