@@ -1,11 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class ExerciseDataProviderService {
-
-  constructor() { }
+  constructor() {}
 
   exerciseTitle: string;
   exerciseData: string[];
@@ -18,7 +17,11 @@ export class ExerciseDataProviderService {
   }
 
   updateExerciseData() {
-    this.currentDisplayedExercise = this.exerciseData[this.currentQuestion];
-    this.currentQuestion++;
+    if (this.currentQuestion < this.exerciseData.length) {
+      this.currentDisplayedExercise = this.exerciseData[this.currentQuestion];
+      this.currentQuestion++;
+    } else {
+      alert("out of questions");
+    }
   }
 }

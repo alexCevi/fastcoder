@@ -8,11 +8,11 @@ import { ExerciseDataProviderService } from '../services/exercise-data-provider.
 })
 export class JsexerciseComponent {
 
-  constructor(public jsSettingSelection: ExerciseDataProviderService) { }
+  constructor(public setExerciseSelection: ExerciseDataProviderService) { }
 
   setExerciseAsJs() {
     const jsExerciseData = ['const', 'array', 'let', 'function', '()', '{}', 'string', 'number'];
-    this.jsSettingSelection.setExerciseData('JavaScript', jsExerciseData);
+    this.setExerciseSelection.setExerciseData('JavaScript', jsExerciseData);
   }
 
 }
