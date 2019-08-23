@@ -4,7 +4,7 @@ import { Injectable } from "@angular/core";
   providedIn: "root"
 })
 export class ExerciseDataProviderService {
-  constructor() {}
+  constructor() { }
 
   exerciseTitle: string;
   exerciseData: string[];
@@ -21,7 +21,7 @@ export class ExerciseDataProviderService {
       this.currentDisplayedExercise = this.exerciseData[this.currentQuestion];
       this.currentQuestion++;
     } else {
-      alert("out of questions");
+      alert('out of questions');
     }
   }
 }

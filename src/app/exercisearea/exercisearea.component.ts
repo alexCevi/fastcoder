@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ExerciseDataProviderService } from '../services/exercise-data-provider.service';
 import { Router } from '@angular/router';
-import { viewClassName } from '@angular/compiler';
 
 @Component({
   selector: 'app-exercisearea',
@@ -15,6 +14,7 @@ export class ExerciseareaComponent implements OnInit {
   exerciseDataDisplay: string;
   userDataInput: string;
   clearData: string;
+  hasExerciseData: boolean;
 
 
   constructor(public exerciseService: ExerciseDataProviderService, private router: Router) { }
