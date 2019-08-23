@@ -1,21 +1,25 @@
 @import "../scss/main";
 
-.headerNav {
+.headerContainer {
   padding-top: 20px;
   display: flex;
   flex-direction: row;
   background-image: linear-gradient(to right, $brandBlue, $brandGreen);
-  img {
-    align-self: center;
-    padding: 5px;
-    margin-left: 15%;
-    margin-right: 30%;
-  }
+  align-items: center;
+}
+.inner {
+  margin-left: 6.5%;
   a {
-    color: white;
-    text-decoration: none;
-    font-size: 25px;
-    align-self: center;
-    padding-left: 5%;
-  }
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  align-self: center;
+
+}
+}
+#headerLogo {
+  padding-right: 450px;
+}
+.navItem {
+  padding-left: 30px;
 }
