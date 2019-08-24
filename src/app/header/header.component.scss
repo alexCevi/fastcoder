@@ -9,7 +9,6 @@
   justify-content: center;
 }
 .inner {
-  // margin-left: 6.5%;
   a {
     color: white;
     text-decoration: none;
@@ -19,6 +18,9 @@
 }
 #headerLogo {
   padding-right: 450px;
+}
+#headerLogo:hover {
+  cursor: pointer;
 }
 .navItem {
   padding-left: 30px;
