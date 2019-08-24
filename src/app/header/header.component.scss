@@ -6,16 +6,16 @@
   flex-direction: row;
   background-image: linear-gradient(to right, $brandBlue, $brandGreen);
   align-items: center;
+  justify-content: center;
 }
 .inner {
-  margin-left: 6.5%;
+  // margin-left: 6.5%;
   a {
-  color: white;
-  text-decoration: none;
-  font-size: 25px;
-  align-self: center;
-
-}
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    align-self: center;
+  }
 }
 #headerLogo {
   padding-right: 450px;
