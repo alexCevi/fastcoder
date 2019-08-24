@@ -1,21 +1,26 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ExerciseDataProviderService } from '../services/exercise-data-provider.service';
 import { Router } from '@angular/router';
+
+export class Foo {
+  ngOnDestroy(): void {
+    console.log("WORKING???");
+  }
+}
 
 @Component({
   selector: 'app-exercisearea',
   templateUrl: './exercisearea.component.html',
   styleUrls: ['./exercisearea.component.scss']
 })
-export class ExerciseareaComponent implements OnInit {
+export class ExerciseareaComponent {
 
   topTitle: string;
   exerciseDataFromService: string[];
   exerciseDataDisplay: string;
   userDataInput: string;
   clearData: string;
-  hasExerciseData: boolean;
-
+  hasUserStarted = false;
 
   constructor(public exerciseService: ExerciseDataProviderService, private router: Router) { }
 
@@ -30,10 +35,11 @@ export class ExerciseareaComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
+  startExercise() {
+    this.hasUserStarted = true;
     this.topTitle = this.exerciseService.exerciseTitle;
     this.exerciseService.updateExerciseData();
     this.exerciseDataDisplay = this.exerciseService.currentDisplayedExercise;
   }
-}
 
+}

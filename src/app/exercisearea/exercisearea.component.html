@@ -5,14 +5,22 @@
   <div class="exerciseWrapper">
     <div id="questionCardContainer" class="exerciseDataDisply">
       <h2>{{ exerciseDataDisplay }}</h2>
+      <h3 *ngIf="!hasUserStarted">Type the syntax that appears in this box</h3>
+      <button
+        class="buttonAlternative"
+        (click)="startExercise()"
+        *ngIf="!hasUserStarted"
+      >
+        Start Exercise
+      </button>
     </div>
-    <div class="inputArea">
+    <div *ngIf="hasUserStarted" class="inputArea">
       <input
         (keyup)="validateInput($event)"
         #userInput
         name="clearData"
         [(ngModel)]="clearData"
-        placeholder="type in here"
+        placeholder="Type Syntax Here"
         autofocus
       />
     </div>
