@@ -21,7 +21,8 @@ export class ExerciseareaComponent {
     if (this.currentDisplayedExercise === event.target.value) {
       this.updateExerciseData();
       this.clearData = '';
-    } else {
+    } else if (event.key === 'Backspace') {
+      console.log('working');
       // ADD THIS ON BACK SPACE KEY AND COUNT BACKSPACE KEY
       // ADD SHAKE ANIMATION FOR WRONG ANSWER
       // ADD RED GLOW ON CARD
