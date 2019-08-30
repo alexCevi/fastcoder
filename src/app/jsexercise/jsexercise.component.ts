@@ -12,7 +12,8 @@ export class JsexerciseComponent {
   constructor(public setExerciseSelection: ExerciseDataProviderService, private router: Router) { }
 
   setExerciseAsJs() {
-    const jsExerciseData = ['const', 'array', 'let', 'function', '()', '{}', 'string', 'number'];
+    // const jsExerciseData = ['const', 'array', 'let', 'function', '()', '{}', 'string', 'number'];
+    const jsExerciseData = ['const', 'array'];
     this.setExerciseSelection.setExerciseData('JavaScript', jsExerciseData);
     this.router.navigate(['train']);
   }
