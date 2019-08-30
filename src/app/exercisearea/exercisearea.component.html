@@ -1,9 +1,13 @@
 <div class="componentWrapper">
-  <div class="topContainer">
+  <div class="titleContainer">
     <h1>{{ topTitle }}</h1>
   </div>
-  <div class="exerciseWrapper">
-    <div id="questionCardContainer" class="exerciseDataDisply">
+  <div class="exerciseWrapper" id="exerciseWrapper">
+    <div
+      *ngIf="!exerciseHasFinished"
+      id="questionCardContainer"
+      class="exerciseDataDisply"
+    >
       <h2>{{ currentDisplayedExercise }}</h2>
       <h3 *ngIf="!hasUserStarted">Type the syntax that appears in this box</h3>
       <button
@@ -14,7 +18,11 @@
         Start Exercise
       </button>
     </div>
-    <div *ngIf="hasUserStarted" class="inputArea">
+    <div
+      *ngIf="hasUserStarted && !exerciseHasFinished"
+      id="inputArea"
+      class="inputWrapper"
+    >
       <input
         (keyup)="validateInput($event)"
         #userInput
@@ -24,6 +32,18 @@
         autofocus
         autocomplete="off"
       />
+    </div>
+    <div
+      *ngIf="exerciseHasFinished"
+      class="exerciseDataDisply"
+      id="exerciseReportContainer"
+    >
+      <h1>Exercise Report</h1>
+      <hr />
+      <h3>Accuracy</h3>
+      <span>{{ exerciseAccuracy }}%</span>
+      <h3 id="wpmHeader">WPM</h3>
+      <span>{{ exerciseWpm }}</span>
     </div>
   </div>
 </div>
