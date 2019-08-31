@@ -11,7 +11,7 @@
       <h2 *ngIf="hasStarted">{{ this.exercise.question }}</h2>
       <h3 *ngIf="!hasStarted">Type the syntax that appears in this box</h3>
       <button
-        class="buttonAlternative"
+        class="buttonAlternative-medium"
         (click)="startExercise()"
         *ngIf="!hasStarted"
       >
@@ -34,10 +34,10 @@
     >
       <h1>Exercise Report</h1>
       <hr />
-      <h3>Accuracy</h3>
+      <h4>Accuracy</h4>
       <span>{{ exercise.accuracy }}%</span>
-      <h3 id="wpmHeader">WPM</h3>
-      <span>{{ exercise.wpm }}</span>
+      <h4 id="wpmHeader">Elapsed Time</h4>
+      <span>{{ exercise.time }}s</span>
     </div>
   </div>
 </div>

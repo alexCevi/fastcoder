@@ -14,6 +14,8 @@ import { ExerciseareaComponent } from './exercisearea/exercisearea.component';
 import { ExerciseDataProviderService } from './services/exercise-data-provider.service';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { HtmlexerciseComponent } from './htmlexercise/htmlexercise.component';
+import { AutofocusModule } from 'angular-autofocus-fix';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { HtmlexerciseComponent } from './htmlexercise/htmlexercise.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ScrollToModule.forRoot()
+    ScrollToModule.forRoot(),
+    AutofocusModule
   ],
   providers: [ExerciseDataProviderService],
   bootstrap: [AppComponent]

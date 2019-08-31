@@ -35,6 +35,7 @@ export class ExerciseareaComponent {
     this.hasStarted = true;
     this.exercise.number = 0;
     this.updateExerciseData();
+    this.exercise.timer(true);
   }
 
   getAccuracy() {
@@ -44,22 +45,17 @@ export class ExerciseareaComponent {
     if (this.corrections === 0) {
       this.exercise.accuracy = 100;
     } else {
-      this.exercise.accuracy = 10 * (this.expectedAccuracy - this.corrections / this.expectedAccuracy);
+      this.exercise.accuracy = Math.round(10 * (this.expectedAccuracy - this.corrections / this.expectedAccuracy));
     }
   }
-
-  // getWpm() {
-  //   this.exerciseWpm
-  // }
 
   updateExerciseData() {
     if (this.exercise.number < this.exercise.data.length) {
       this.exercise.question = this.exercise.data[this.exercise.number];
-
       this.exercise.number++;
-
       this.expectedAccuracy += this.exercise.question.length;
     } else {
+      this.exercise.timer(false);
       this.getAccuracy();
       this.hasFinished = true;
     }
