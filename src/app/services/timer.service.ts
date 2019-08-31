@@ -21,5 +21,4 @@ export class TimerService {
     console.log(this.elapsed);
   }
 
-
 }
