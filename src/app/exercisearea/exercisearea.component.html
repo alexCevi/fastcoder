@@ -1,49 +1,43 @@
 <div class="componentWrapper">
   <div class="titleContainer">
-    <h1>{{ topTitle }}</h1>
+    <h1>{{ this.exercise.title }}</h1>
   </div>
   <div class="exerciseWrapper" id="exerciseWrapper">
     <div
-      *ngIf="!exerciseHasFinished"
+      *ngIf="!hasFinished"
       id="questionCardContainer"
       class="exerciseDataDisply"
     >
-      <h2>{{ currentDisplayedExercise }}</h2>
-      <h3 *ngIf="!hasUserStarted">Type the syntax that appears in this box</h3>
+      <h2 *ngIf="hasStarted">{{ this.exercise.question }}</h2>
+      <h3 *ngIf="!hasStarted">Type the syntax that appears in this box</h3>
       <button
         class="buttonAlternative"
         (click)="startExercise()"
-        *ngIf="!hasUserStarted"
+        *ngIf="!hasStarted"
       >
         Start Exercise
       </button>
     </div>
-    <div
-      *ngIf="hasUserStarted && !exerciseHasFinished"
-      id="inputArea"
-      class="inputWrapper"
-    >
+    <div *ngIf="hasStarted && !hasFinished" id="inputArea" class="inputWrapper">
       <input
         (keyup)="validateInput($event)"
-        #userInput
-        name="clearData"
-        [(ngModel)]="clearData"
+        id="userInput"
         placeholder="Type Syntax Here"
         autofocus
         autocomplete="off"
       />
     </div>
     <div
-      *ngIf="exerciseHasFinished"
+      *ngIf="hasFinished"
       class="exerciseDataDisply"
       id="exerciseReportContainer"
     >
       <h1>Exercise Report</h1>
       <hr />
       <h3>Accuracy</h3>
-      <span>{{ exerciseAccuracy }}%</span>
+      <span>{{ exercise.accuracy }}%</span>
       <h3 id="wpmHeader">WPM</h3>
-      <span>{{ exerciseWpm }}</span>
+      <span>{{ exercise.wpm }}</span>
     </div>
   </div>
 </div>

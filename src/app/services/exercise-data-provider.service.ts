@@ -6,12 +6,16 @@ import { Injectable } from '@angular/core';
 export class ExerciseDataProviderService {
   constructor() { }
 
-  exerciseTitle: string;
-  exerciseData: string[];
+  title: string;
+  data: string[];
+  accuracy: number;
+  wpm: number;
+  question: string;
+  number: number;
 
   setExerciseData(exerviseTitle: string, exerciseData: string[]) {
-    this.exerciseTitle = exerviseTitle;
-    this.exerciseData = exerciseData;
+    this.title = exerviseTitle;
+    this.data = exerciseData;
   }
 
 }

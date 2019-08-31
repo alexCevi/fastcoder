@@ -13,6 +13,7 @@ import { JsexerciseComponent } from './jsexercise/jsexercise.component';
 import { ExerciseareaComponent } from './exercisearea/exercisearea.component';
 import { ExerciseDataProviderService } from './services/exercise-data-provider.service';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { HtmlexerciseComponent } from './htmlexercise/htmlexercise.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     ExercisecontainerComponent,
     TopinfoComponent,
     JsexerciseComponent,
-    ExerciseareaComponent
+    ExerciseareaComponent,
+    HtmlexerciseComponent
   ],
   imports: [
     BrowserModule,
