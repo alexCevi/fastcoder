@@ -12,7 +12,7 @@
       <h3 *ngIf="!hasStarted">Type the syntax that appears in this box</h3>
       <button
         class="buttonAlternative-medium"
-        (click)="startExercise()"
+        (click)="start()"
         *ngIf="!hasStarted"
       >
         Start Exercise
@@ -36,6 +36,11 @@
       <span>{{ exercise.accuracy }}%</span>
       <h4 id="wpmHeader">Elapsed Time</h4>
       <span>{{ timer.elapsed }}s</span>
+      <br />
+      <br />
+      <button (click)="restart()" class="buttonAlternative-medium">
+        Restart Exercise
+      </button>
     </div>
   </div>
 </div>

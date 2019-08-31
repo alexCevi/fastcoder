@@ -32,7 +32,7 @@ export class ExerciseareaComponent {
     }
   }
 
-  startExercise() {
+  start() {
     this.hasStarted = true;
     this.exercise.number = 0;
     this.updateExerciseData();
@@ -60,5 +60,12 @@ export class ExerciseareaComponent {
       this.hasFinished = true;
       this.timer.clearCount();
     }
+  }
+
+  restart() {
+    this.corrections = 0;
+    this.expectedAccuracy = 0;
+    this.hasStarted = false;
+    this.hasFinished = false;
   }
 }
