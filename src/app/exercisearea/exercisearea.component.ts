@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ExerciseDataProviderService } from '../services/exercise-data-provider.service';
+import { TimerService } from '../services/timer.service';
 
 @Component({
   selector: 'app-exercisearea',
@@ -13,7 +14,7 @@ export class ExerciseareaComponent {
   hasStarted = false;
   hasFinished = false;
 
-  constructor(public exercise: ExerciseDataProviderService) { }
+  constructor(public exercise: ExerciseDataProviderService, public timer: TimerService) { }
 
   validateInput(event: any) {
     if (this.exercise.question === event.target.value) {
@@ -35,7 +36,7 @@ export class ExerciseareaComponent {
     this.hasStarted = true;
     this.exercise.number = 0;
     this.updateExerciseData();
-    this.exercise.timer(true);
+    this.timer.startCount();
   }
 
   getAccuracy() {
@@ -55,9 +56,9 @@ export class ExerciseareaComponent {
       this.exercise.number++;
       this.expectedAccuracy += this.exercise.question.length;
     } else {
-      this.exercise.timer(false);
       this.getAccuracy();
       this.hasFinished = true;
+      this.timer.clearCount();
     }
   }
 }
