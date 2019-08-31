@@ -1,11 +1,11 @@
 <div class="headerContainer">
-  <div class="inner">
-    <img
-      id="headerLogo"
-      [routerLink]="'/'"
-      src="https://via.placeholder.com/300x56.png"
-    />
-    <a class="navItem" [routerLink]="'/select'">Select Exercise</a>
-    <a class="navItem" href="https://omfgdogs.com">Support</a>
+  <div class="flex-container">
+    <h1 class="logo">
+      <img id="headerLogo" [routerLink]="'/'" src="./assets/logoOne.png" />
+    </h1>
+    <ul class="navigation">
+      <li><a [routerLink]="'/select'">Exercises</a></li>
+      <li><a href="https://omfgdogs.com">Support</a></li>
+    </ul>
   </div>
 </div>

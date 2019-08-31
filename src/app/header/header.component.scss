@@ -1,31 +1,81 @@
 @import "../scss/main";
 
-.headerContainer {
-  padding-top: 20px;
+.flex-container {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  padding-bottom: 25px;
+  background: transparent;
 }
-.inner {
-  a {
-    color: white;
-    text-decoration: none;
-    font-size: 25px;
-    align-self: center;
-  }
-  a:hover {
-    color: $brandPurple;
-    transition: 300ms;
-  }
+
+.headerContainer {
+  padding-left: 15%;
+  padding-right: 15%;
 }
-#headerLogo {
-  padding-right: 450px;
-}
-#headerLogo:hover {
+
+.logo {
+  margin: 0 0 0 0.45em;
   cursor: pointer;
 }
-.navItem {
-  padding-left: 30px;
+
+.navigation {
+  list-style: none;
+}
+
+.navigation a {
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.navigation {
+  display: flex;
+}
+
+.navigation a {
+  display: block;
+  padding: 1em;
+  color: white;
+}
+
+.navigation a:hover {
+  transition: 0.1s;
+  transform: scale(1.1);
+}
+
+@media all and (max-width: 990px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin: 0;
+  }
+
+  .navigation {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .logo {
+    margin: 0.25em 0;
+    align-self: left;
+  }
+
+  .navigation {
+    flex-direction: column;
+  }
+
+  .navigation a {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .navigation li:last-of-type a {
+    border-bottom: none;
+  }
 }
