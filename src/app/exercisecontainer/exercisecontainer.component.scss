@@ -1,11 +1,12 @@
 @import "../scss/main";
+
 .componentWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   h1 {
     text-align: center;
-    padding-top: 5%;
+    padding-top: 3%;
     font-size: 65px;
     font-weight: 400;
     color: $brandPurple;

@@ -11,10 +11,9 @@ export class HtmlexerciseComponent {
 
   constructor(public setExerciseSelection: ExerciseDataProviderService, private router: Router) { }
 
-  setExerciseAsHtml() {
-    // const jsExerciseData = ['const', 'array', 'let', 'function', '()', '{}', 'string', 'number'];
-    const htmlExerciseData = ['html', 'div'];
-    this.setExerciseSelection.setExerciseData('HTML', htmlExerciseData);
+  setExercise() {
+    const data = ['html', 'div'];
+    this.setExerciseSelection.setExerciseData('HTML', data);
     this.router.navigate(['train']);
   }
 

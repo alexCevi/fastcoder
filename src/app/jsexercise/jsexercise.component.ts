@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 })
 export class JsexerciseComponent {
 
-  constructor(public setExerciseSelection: ExerciseDataProviderService, private router: Router) { }
+  constructor(private exercise: ExerciseDataProviderService, private router: Router) { }
 
-  setExerciseAsJs() {
+  setExercise() {
     // const jsExerciseData = ['const', 'array', 'let', 'function', '()', '{}', 'string', 'number'];
-    const jsExerciseData = ['const', 'array'];
-    this.setExerciseSelection.setExerciseData('JavaScript', jsExerciseData);
+    const data = ['const', 'array'];
+    this.exercise.setExerciseData('JavaScript', data);
     this.router.navigate(['train']);
   }
 
