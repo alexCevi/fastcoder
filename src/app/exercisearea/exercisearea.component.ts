@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ExerciseDataProviderService } from '../services/exercise-data-provider.service';
 import { TimerService } from '../services/timer.service';
+import { CardmodifierService } from '../services/cardmodifier.service';
 
 @Component({
   selector: 'app-exercisearea',
@@ -14,47 +15,42 @@ export class ExerciseareaComponent {
   hasStarted = false;
   hasFinished = false;
 
-  constructor(public exercise: ExerciseDataProviderService, public timer: TimerService) { }
+  constructor(public exercise: ExerciseDataProviderService, public timer: TimerService, private cardEffects: CardmodifierService) { }
 
   validateInput(event: any) {
-    if (this.exercise.question === event.target.value) {
+    if (event.target.value === this.exercise.data[this.exercise.number]) {
       this.updateExerciseData();
       (document.getElementById('userInput') as HTMLInputElement).value = '';
 
     } else if (event.key === 'Backspace') {
-      const exerciseDataElement = document.getElementById('questionCardContainer');
-      exerciseDataElement.setAttribute('style', 'box-shadow: 0 8px 16px 0 red');
       this.corrections++;
+      this.cardEffects.error();
 
-      setTimeout(() => {
-        exerciseDataElement.setAttribute('style', 'box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);');
-      }, 500);
     }
   }
 
   start() {
     this.hasStarted = true;
     this.exercise.number = 0;
-    this.updateExerciseData();
+    console.log(this.exercise.data[this.exercise.number]);
     this.timer.startCount();
   }
 
   getAccuracy() {
-    const exerciseReportContainer = document.getElementById('exerciseWrapper');
-    exerciseReportContainer.setAttribute('style', 'height: 700px;');
-
+    this.cardEffects.extended();
     if (this.corrections === 0) {
       this.exercise.accuracy = 100;
     } else {
       this.exercise.accuracy = Math.round(10 * (this.expectedAccuracy - this.corrections / this.expectedAccuracy));
+      console.log('correction' + this.corrections);
     }
   }
 
   updateExerciseData() {
-    if (this.exercise.number < this.exercise.data.length) {
-      this.exercise.question = this.exercise.data[this.exercise.number];
+    if (this.exercise.number < this.exercise.data.length - 1) {
       this.exercise.number++;
-      this.expectedAccuracy += this.exercise.question.length;
+      this.expectedAccuracy += this.exercise.data[this.exercise.number].length;
+      console.log(this.exercise.data.length);
     } else {
       this.getAccuracy();
       this.hasFinished = true;
@@ -63,9 +59,11 @@ export class ExerciseareaComponent {
   }
 
   restart() {
+    this.cardEffects.shorten();
     this.corrections = 0;
     this.expectedAccuracy = 0;
     this.hasStarted = false;
     this.hasFinished = false;
+    this.timer.clearCount();
   }
 }

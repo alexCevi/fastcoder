@@ -8,7 +8,7 @@
       id="questionCardContainer"
       class="exerciseDataDisply"
     >
-      <h2 *ngIf="hasStarted">{{ this.exercise.question }}</h2>
+      <h2 *ngIf="hasStarted">{{ this.exercise.data[this.exercise.number] }}</h2>
       <h3 *ngIf="!hasStarted">Type the syntax that appears in this box</h3>
       <button
         class="buttonAlternative-medium"

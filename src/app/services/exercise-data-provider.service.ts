@@ -10,7 +10,7 @@ export class ExerciseDataProviderService {
   data: string[];
   accuracy: number;
   question: string;
-  number: number;
+  number = 0;
   time = 0;
 
   setExerciseData(exerviseTitle: string, exerciseData: string[]) {
