@@ -21,18 +21,15 @@ export class ExerciseareaComponent {
     if (event.target.value === this.exercise.data[this.exercise.number]) {
       this.updateExerciseData();
       (document.getElementById('userInput') as HTMLInputElement).value = '';
-
     } else if (event.key === 'Backspace') {
       this.corrections++;
       this.cardEffects.error();
-
     }
   }
 
   start() {
     this.hasStarted = true;
     this.exercise.number = 0;
-    console.log(this.exercise.data[this.exercise.number]);
     this.timer.startCount();
   }
 
@@ -42,7 +39,6 @@ export class ExerciseareaComponent {
       this.exercise.accuracy = 100;
     } else {
       this.exercise.accuracy = Math.round(10 * (this.expectedAccuracy - this.corrections / this.expectedAccuracy));
-      console.log('correction' + this.corrections);
     }
   }
 
@@ -50,7 +46,6 @@ export class ExerciseareaComponent {
     if (this.exercise.number < this.exercise.data.length - 1) {
       this.exercise.number++;
       this.expectedAccuracy += this.exercise.data[this.exercise.number].length;
-      console.log(this.exercise.data.length);
     } else {
       this.getAccuracy();
       this.hasFinished = true;
@@ -60,10 +55,10 @@ export class ExerciseareaComponent {
 
   restart() {
     this.cardEffects.shorten();
+    this.timer.clearCount();
     this.corrections = 0;
     this.expectedAccuracy = 0;
     this.hasStarted = false;
     this.hasFinished = false;
-    this.timer.clearCount();
   }
 }

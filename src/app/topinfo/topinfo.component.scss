@@ -1,3 +1,7 @@
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+}
 .introContainer {
   padding-left: 10%;
   padding-top: 60px;
@@ -16,6 +20,13 @@
     font-weight: 300;
     width: 650px;
     padding-top: 2px;
+  }
+}
+.rightContainer {
+  img {
+    width: 42%;
+    padding-top: 9%;
+    padding-left: 50%;
   }
 }
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {

@@ -18,7 +18,6 @@ export class TimerService {
 
   clearCount() {
     window.clearInterval(this.name);
-    console.log(this.elapsed);
   }
 
 }
