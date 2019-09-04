@@ -1,11 +1,15 @@
 <div id="exerciseSelection" class="componentWrapper">
   <h1>Select An Exercise</h1>
   <div class="innerWrapper">
-    <app-jsexercise class="flex-item"></app-jsexercise>
-    <app-htmlexercise class="flex-item"></app-htmlexercise>
-    <app-jsexercise class="flex-item"></app-jsexercise>
-    <app-jsexercise class="flex-item"></app-jsexercise>
-    <app-jsexercise class="flex-item"></app-jsexercise>
-    <app-jsexercise class="flex-item"></app-jsexercise>
+    <div *ngFor="let data of exercies$ | async" class="card flex-item">
+      <img src="{{ data.imgUrl }}" style="width:100%" />
+      <div class="container">
+        <h4>{{ data.title }}</h4>
+        <p>{{ data.tag }}</p>
+        <button class="buttonAlternative">
+          Select Exercise
+        </button>
+      </div>
+    </div>
   </div>
 </div>

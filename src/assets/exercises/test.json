@@ -1,0 +1,43 @@
+[
+  {
+    "id": "js",
+    "title": "JavaScript",
+    "tag": "Vanilla js ",
+    "imgUrl": "./assets/jsCard.jpg"
+  },
+  {
+    "id": "js",
+    "title": "TypeScript",
+    "imgUrl": "./assets/tsCard.jpg"
+  },
+  {
+    "id": "js",
+    "title": "CSS",
+    "imgUrl": "./assets/cssCard.jpg"
+  },
+  {
+    "id": "js",
+    "title": "Git",
+    "imgUrl": "./assets/gitCard.jpg"
+  },
+  {
+    "id": "js",
+    "title": "HTML",
+    "imgUrl": "./assets/htmlCard.jpg"
+  },
+  {
+    "id": "js",
+    "title": "Unix",
+    "imgUrl": "./assets/unixCard.jpg"
+  },
+  {
+    "id": "js",
+    "title": "FILL ME",
+    "imgUrl": "./assets/htmlCard.jpg"
+  },
+  {
+    "id": "js",
+    "title": "FILL ME",
+    "imgUrl": "./assets/htmlCard.jpg"
+  }
+]

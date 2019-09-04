@@ -15,6 +15,8 @@ import { ExerciseDataProviderService } from './services/exercise-data-provider.s
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { HtmlexerciseComponent } from './htmlexercise/htmlexercise.component';
 import { AutofocusModule } from 'angular-autofocus-fix';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { AutofocusModule } from 'angular-autofocus-fix';
     AppRoutingModule,
     FormsModule,
     ScrollToModule.forRoot(),
-    AutofocusModule
+    AutofocusModule,
+    HttpClientModule
   ],
   providers: [ExerciseDataProviderService],
   bootstrap: [AppComponent]

@@ -11,18 +11,19 @@
     font-weight: 400;
     color: $brandPurple;
   }
-
   background-color: white;
-  .innerWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 69%;
-    .flex-item {
-      margin: 1%;
-    }
+}
+.innerWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 80%;
+  justify-content: center;
+  .flex-item {
+    margin: 1%;
   }
 }
+
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
   .innerWrapper {
     width: 75% !important;
