@@ -2,6 +2,13 @@
   display: flex;
   flex-direction: row;
 }
+#slash {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 33vw;
+  z-index: -1;
+}
 .introContainer {
   padding-left: 10%;
   padding-top: 60px;

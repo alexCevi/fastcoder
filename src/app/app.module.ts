@@ -9,13 +9,12 @@ import { HeaderComponent } from './header/header.component';
 import { HomecontainerComponent } from './homecontainer/homecontainer.component';
 import { ExercisecontainerComponent } from './exercisecontainer/exercisecontainer.component';
 import { TopinfoComponent } from './topinfo/topinfo.component';
-import { JsexerciseComponent } from './jsexercise/jsexercise.component';
 import { ExerciseareaComponent } from './exercisearea/exercisearea.component';
 import { ExerciseDataProviderService } from './services/exercise-data-provider.service';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
-import { HtmlexerciseComponent } from './htmlexercise/htmlexercise.component';
 import { AutofocusModule } from 'angular-autofocus-fix';
 import { HttpClientModule } from '@angular/common/http';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 
 
@@ -26,9 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomecontainerComponent,
     ExercisecontainerComponent,
     TopinfoComponent,
-    JsexerciseComponent,
     ExerciseareaComponent,
-    HtmlexerciseComponent
+    LeaderboardComponent
   ],
   imports: [
     BrowserModule,
