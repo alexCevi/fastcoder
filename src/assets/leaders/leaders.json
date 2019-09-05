@@ -1,48 +1,50 @@
-{
-  "catagory" : "JavaScript",
-  "firstPlace": "playerId",
-  "secondPlace": "playerId",
-  "thirdPlace": "playerId"
-},
-{
-  "catagory" : "TypeScript",
-  "firstPlace": "playerId",
-  "secondPlace": "playerId",
-  "thirdPlace": "playerId"
-},
-{
-  "catagory" : "HTML",
-  "firstPlace": "playerId",
-  "secondPlace": "playerId",
-  "thirdPlace": "playerId"
-},
-{
-  "catagory" : "CSS",
-  "firstPlace": "playerId",
-  "secondPlace": "playerId",
-  "thirdPlace": "playerId"
-},
-{
-  "catagory" : "Git",
-  "firstPlace": "playerId",
-  "secondPlace": "playerId",
-  "thirdPlace": "playerId"
-},
-{
-  "catagory" : "Unix",
-  "firstPlace": "playerId",
-  "secondPlace": "playerId",
-  "thirdPlace": "playerId"
-},
-{
-  "catagory" : "Angular",
-  "firstPlace": "playerId",
-  "secondPlace": "playerId",
-  "thirdPlace": "playerId"
-},
-{
-  "catagory" : "npm",
-  "firstPlace": "playerId",
-  "secondPlace": "playerId",
-  "thirdPlace": "playerId"
-}
+[
+  {
+    "catagory": "JavaScript",
+    "firstPlace": "playerId",
+    "secondPlace": "playerId",
+    "thirdPlace": "playerId"
+  },
+  {
+    "catagory": "TypeScript",
+    "firstPlace": "playerId",
+    "secondPlace": "playerId",
+    "thirdPlace": "playerId"
+  },
+  {
+    "catagory": "HTML",
+    "firstPlace": "playerId",
+    "secondPlace": "playerId",
+    "thirdPlace": "playerId"
+  },
+  {
+    "catagory": "CSS",
+    "firstPlace": "playerId",
+    "secondPlace": "playerId",
+    "thirdPlace": "playerId"
+  },
+  {
+    "catagory": "Git",
+    "firstPlace": "playerId",
+    "secondPlace": "playerId",
+    "thirdPlace": "playerId"
+  },
+  {
+    "catagory": "Unix",
+    "firstPlace": "playerId",
+    "secondPlace": "playerId",
+    "thirdPlace": "playerId"
+  },
+  {
+    "catagory": "Angular",
+    "firstPlace": "playerId",
+    "secondPlace": "playerId",
+    "thirdPlace": "playerId"
+  },
+  {
+    "catagory": "npm",
+    "firstPlace": "playerId",
+    "secondPlace": "playerId",
+    "thirdPlace": "playerId"
+  }
+]
