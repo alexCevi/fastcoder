@@ -2,42 +2,48 @@
   {
     "id": "js",
     "title": "JavaScript",
-    "tag": "Vanilla js ",
-    "imgUrl": "./assets/jsCard.jpg"
+    "tag": "fab fa-js"
   },
   {
     "id": "js",
     "title": "TypeScript",
-    "imgUrl": "./assets/tsCard.jpg"
+    "imgUrl": "./assets/tsCard.jpg",
+    "tag": "fas fa-file-code"
   },
   {
     "id": "js",
     "title": "CSS",
-    "imgUrl": "./assets/cssCard.jpg"
+    "imgUrl": "./assets/cssCard.jpg",
+    "tag": "fab fa-css3-alt"
   },
   {
     "id": "js",
     "title": "Git",
-    "imgUrl": "./assets/gitCard.jpg"
+    "imgUrl": "./assets/gitCard.jpg",
+    "tag": "fab fa-git-alt"
   },
   {
     "id": "js",
     "title": "HTML",
-    "imgUrl": "./assets/htmlCard.jpg"
+    "imgUrl": "./assets/htmlCard.jpg",
+    "tag": "fab fa-html5"
   },
   {
     "id": "js",
     "title": "Unix",
-    "imgUrl": "./assets/unixCard.jpg"
+    "imgUrl": "./assets/unixCard.jpg",
+    "tag": "fas fa-terminal"
   },
   {
     "id": "js",
     "title": "FILL ME",
-    "imgUrl": "./assets/htmlCard.jpg"
+    "imgUrl": "./assets/htmlCard.jpg",
+    "tag": "far fa-file-code"
   },
   {
     "id": "js",
     "title": "FILL ME",
-    "imgUrl": "./assets/htmlCard.jpg"
+    "imgUrl": "./assets/htmlCard.jpg",
+    "tag": "far fa-file-code"
   }
 ]

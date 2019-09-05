@@ -16,16 +16,16 @@
 .buttonAlternative {
   width: 100%;
   padding: 0.382em 1em;
-  background-color: transparent;
-  color: $brandPurple;
-  border: 1px solid $brandBlue;
+  background-color: white;
+  color: black;
+  border: none;
   border-radius: 30px;
   font-size: 20px;
+  font-weight: 500;
   cursor: pointer;
   margin-bottom: 5%;
 }
 .buttonAlternative:hover {
-  border: 1px solid $brandGreen;
   transition: 0.2s;
 }
 .buttonAlternative-medium {
