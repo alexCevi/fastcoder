@@ -13,8 +13,8 @@ export class ExerciseDataProviderService {
   number = 0;
   time = 0;
 
-  setExerciseData(exerviseTitle: string, exerciseData: string[]) {
-    this.title = exerviseTitle;
-    this.data = exerciseData;
-  }
+  // setExerciseData(exerviseTitle: string, exerciseData: string[]) {
+  //   this.title = exerviseTitle;
+  //   this.data = exerciseData;
+  // }
 }

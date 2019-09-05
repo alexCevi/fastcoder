@@ -1,10 +1,12 @@
 <div id="exerciseSelection" class="componentWrapper">
   <h1 id="containerTitle">Select An Exercise</h1>
   <div class="innerWrapper">
-    <div *ngFor="let data of exercies$ | async" class="card flex-item">
-      <!-- <img src="{{ data.imgUrl }}" style="width:100%" /> -->
+    <div
+      (click)="sendExercise(data.title, data.questionData)"
+      *ngFor="let data of exercies$ | async"
+      class="card flex-item"
+    >
       <div class="container">
-        <!-- <p>{{ data.tag }}</p> -->
         <h4>{{ data.title }}</h4>
         <i id="exerciseIcon" class="{{ data.tag }}"></i>
         <p id="exerciseDesc">

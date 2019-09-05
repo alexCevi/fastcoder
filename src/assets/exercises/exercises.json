@@ -2,34 +2,44 @@
   {
     "id": "js",
     "title": "JavaScript",
-    "tag": "fab fa-js"
+    "tag": "fab fa-js",
+    "questionData": [
+      "const",
+      "array",
+      "let",
+      "function",
+      "()",
+      "{}",
+      "string",
+      "number"
+    ]
   },
   {
-    "id": "js",
+    "id": "ts",
     "title": "TypeScript",
     "imgUrl": "./assets/tsCard.jpg",
     "tag": "fas fa-file-code"
   },
   {
-    "id": "js",
+    "id": "css",
     "title": "CSS",
     "imgUrl": "./assets/cssCard.jpg",
     "tag": "fab fa-css3-alt"
   },
   {
-    "id": "js",
+    "id": "git",
     "title": "Git",
     "imgUrl": "./assets/gitCard.jpg",
     "tag": "fab fa-git-alt"
   },
   {
-    "id": "js",
+    "id": "html",
     "title": "HTML",
     "imgUrl": "./assets/htmlCard.jpg",
     "tag": "fab fa-html5"
   },
   {
-    "id": "js",
+    "id": "unix",
     "title": "Unix",
     "imgUrl": "./assets/unixCard.jpg",
     "tag": "fas fa-terminal"

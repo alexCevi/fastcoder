@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { ExerciseDataProviderService } from '../services/exercise-data-provider.service';
+import { Router } from '@angular/router';
+
+
 
 interface ExerciseType {
   id: string;
@@ -8,6 +12,7 @@ interface ExerciseType {
   imgUrl: string;
   desc: string;
   tag: string;
+  questionData: Array<string>;
 }
 
 @Component({
@@ -17,14 +22,19 @@ interface ExerciseType {
 })
 export class ExercisecontainerComponent implements OnInit {
 
-  readonly configUrl = './assets/exercises/test.json';
-  constructor(private http: HttpClient) { }
+  readonly configUrl = './assets/exercises/exercises.json';
+  constructor(private http: HttpClient, private exerciseService: ExerciseDataProviderService, private router: Router) { }
 
   exercies$: Observable<ExerciseType[]>;
 
   ngOnInit() {
     this.exercies$ = this.http.get<ExerciseType[]>(this.configUrl);
-    console.log(this.exercies$);
+  }
+
+  sendExercise(title: string, questionData: Array<string>) {
+    this.exerciseService.title = title;
+    this.exerciseService.data = questionData;
+    this.router.navigate(['train']);
   }
 
 }
