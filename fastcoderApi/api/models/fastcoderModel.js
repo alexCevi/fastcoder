@@ -10,21 +10,21 @@ var ExercisesSchema = new Schema({
     questionData: []
   }
 });
-var LeadersSchema = new Schema({
-  leaders: {
-    id: String,
-    first: String,
-    second: String,
-    third: String
-  }
-});
-var UsersSchema = new Schema({
-  users: {
-    id: String,
-    testData: String
-  }
-});
+// var LeaderBoardSchema = new Schema({
+//   leaderboard: {
+//     id: String,
+//     first: String,
+//     second: String,
+//     third: String
+//   }
+// });
+// var UsersSchema = new Schema({
+//   users: {
+//     id: String,
+//     testData: String
+//   }
+// });
 
 module.exports = mongoose.model("Exercises", ExercisesSchema);
-module.exports = mongoose.model("Leaders", LeadersSchema);
-module.exports = mongoose.model("Users", UsersSchema);
+// module.exports = mongoose.model("Leaderboard", LeaderBoardSchema);
+// module.exports = mongoose.model("Users", UsersSchema);
