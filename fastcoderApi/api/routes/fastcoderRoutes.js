@@ -1,20 +1,16 @@
 "use strict";
 module.exports = function(app) {
-  var fastCoder = require("../controllers/fastcoderController");
+  var todoList = require("../controllers/fastcoderController");
+
+  // todoList Routes
+  app
+    .route("/tasks")
+    .get(todoList.list_all_tasks)
+    .post(todoList.create_a_task);
 
   app
-    .route("/exercises")
-    .get(fastCoder.list_all_exercises)
-    .post(fastCoder.create_a_exercise);
-
-  //   app
-  //     .route("/leaderboards")
-  //     .get(fastCoder.list_all_leaderboards)
-  //     .post(fastCoder.create_a_leaderboard)
-  //     .put(todoList.update_a_leaderboard);
-
-  //   app
-  //     .route("/leaders/:userId")
-  //     .get(fastCoder.read_a_user)
-  //     .put(fastCoder.update_a_user);
+    .route("/tasks/:taskId")
+    .get(todoList.read_a_task)
+    .put(todoList.update_a_task)
+    .delete(todoList.delete_a_task);
 };

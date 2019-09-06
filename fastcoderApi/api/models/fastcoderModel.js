@@ -2,29 +2,24 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-var ExercisesSchema = new Schema({
-  exercise: {
-    id: String,
-    title: String,
-    tag: String,
-    questionData: []
+var TaskSchema = new Schema({
+  name: {
+    type: String,
+    required: "Kindly enter the name of the task"
+  },
+  Created_date: {
+    type: Date,
+    default: Date.now
+  },
+  status: {
+    type: [
+      {
+        type: String,
+        enum: ["pending", "ongoing", "completed"]
+      }
+    ],
+    default: ["pending"]
   }
 });
-// var LeaderBoardSchema = new Schema({
-//   leaderboard: {
-//     id: String,
-//     first: String,
-//     second: String,
-//     third: String
-//   }
-// });
-// var UsersSchema = new Schema({
-//   users: {
-//     id: String,
-//     testData: String
-//   }
-// });
 
-module.exports = mongoose.model("Exercises", ExercisesSchema);
-// module.exports = mongoose.model("Leaderboard", LeaderBoardSchema);
-// module.exports = mongoose.model("Users", UsersSchema);
+module.exports = mongoose.model("Tasks", TaskSchema);
