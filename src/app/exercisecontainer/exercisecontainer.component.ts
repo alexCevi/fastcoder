@@ -22,7 +22,7 @@ interface ExerciseType {
 })
 export class ExercisecontainerComponent implements OnInit {
 
-  readonly configUrl = 'http://localhost:8080/api/exercises';
+  readonly configUrl = 'https://fast-coder-app-7948.nodechef.com/api/exercises';
   constructor(private http: HttpClient, private exerciseService: ExerciseDataProviderService, private router: Router) { }
 
   exercies$: Observable<ExerciseType[]>;
