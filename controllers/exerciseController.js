@@ -1,5 +1,5 @@
 // Import exercise model
-Exercise = require("./exerciseModel");
+Exercise = require("../models/exerciseModel");
 
 //Handle get requests api/exercises
 exports.index = function(req, res) {

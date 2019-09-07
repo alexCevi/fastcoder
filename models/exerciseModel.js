@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-// Setup schema
+
 var exerciseSchema = mongoose.Schema({
   id: {
     type: String,
@@ -18,6 +18,7 @@ var exerciseSchema = mongoose.Schema({
     required: true
   }
 });
+
 // Export exercise model
 var exercise = (module.exports = mongoose.model("exercise", exerciseSchema));
 module.exports.get = function(callback, limit) {

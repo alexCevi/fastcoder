@@ -7,19 +7,30 @@ router.get("/", function(req, res) {
     message: "Fastcoder API is working"
   });
 });
-// Import controller
-var mainController = require("./mainController");
+
+var exerciseController = require("./controllers/exerciseController");
+var leaderboardController = require("./controllers/leaderboardController");
 
 router
   .route("/exercises")
-  .get(mainController.index)
-  .post(mainController.new);
+  .get(exerciseController.index)
+  .post(exerciseController.new);
 
 router
   .route("/exercises/:exercise_id")
-  .get(mainController.view)
-  .put(mainController.update)
-  .delete(mainController.delete);
+  .get(exerciseController.view)
+  .put(exerciseController.update)
+  .delete(exerciseController.delete);
 
-// Export API routes
+router
+  .route("/leaderboards")
+  .get(leaderboardController.index)
+  .post(leaderboardController.new);
+
+router
+  .route("/leaderboards/:leaderboard_id")
+  .get(leaderboardController.view)
+  .put(leaderboardController.update)
+  .delete(leaderboardController.delete);
+
 module.exports = router;
