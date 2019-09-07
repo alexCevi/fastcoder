@@ -8,7 +8,6 @@ app.use(cors());
 // Import routes
 let apiRoutes = require("./api-routes");
 
-// Configure bodyparser to handle post requests
 app.use(
   bodyParser.urlencoded({
     extended: true
