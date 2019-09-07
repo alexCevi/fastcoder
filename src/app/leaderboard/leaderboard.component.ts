@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttputilsService } from '../services/httputils.service';
 
 @Component({
   selector: 'app-leaderboard',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeaderboardComponent implements OnInit {
 
-  constructor() { }
+  leaderboards$;
+  constructor(private http: HttputilsService) { }
 
   ngOnInit() {
+    this.leaderboards$ = this.http.getLeaderboards();
   }
 
 }

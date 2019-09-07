@@ -1,46 +1,28 @@
 <div class="componentWrapper">
   <h1 id="topTitle">The Leaderboard</h1>
   <div class="tableWrapper">
-    <table>
+    <table *ngFor="let data of leaderboards$ | async">
       <tr>
-        <th id="exerciseType">JavaScript</th>
+        <th id="exerciseType">{{ data.catagory }}</th>
         <th>Accuracy</th>
         <th>Time</th>
       </tr>
       <tr>
-        <td id="username"><i class="fas fa-crown"></i> Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
-        <td>Germany</td>
+        <td id="username">
+          <i class="fas fa-crown"></i> {{ data.firstPlaceUser.username }}
+        </td>
+        <td>{{ data.firstPlaceUser.accuracy }}</td>
+        <td>{{ data.firstPlaceUser.time }}</td>
       </tr>
       <tr>
-        <td id="username">Centro comercial Moctezuma</td>
-        <td>Francisco Chang</td>
-        <td>Mexico</td>
+        <td id="username">{{ data.secondPlaceUser }}</td>
+        <td>DATA</td>
+        <td>DATA</td>
       </tr>
       <tr>
-        <td id="username">Ernst Handel</td>
-        <td>Roland Mendel</td>
-        <td>Austria</td>
-      </tr>
-      <tr>
-        <th id="exerciseType">Company</th>
-        <th>Contact</th>
-        <th>Country</th>
-      </tr>
-      <tr>
-        <td id="username">Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
-        <td>Germany</td>
-      </tr>
-      <tr>
-        <td id="username">Centro comercial Moctezuma</td>
-        <td>Francisco Chang</td>
-        <td>Mexico</td>
-      </tr>
-      <tr>
-        <td id="username">Ernst Handel</td>
-        <td>Roland Mendel</td>
-        <td>Austria</td>
+        <td id="username">{{ data.thirdPlaceUser }}</td>
+        <td>DATA</td>
+        <td>DATA</td>
       </tr>
     </table>
   </div>
