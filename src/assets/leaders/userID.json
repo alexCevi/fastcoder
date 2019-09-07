@@ -1,5 +1,16 @@
 {
-  "id": 34241,
-  "accuracy": 100,
-  "time": 7
+  "id": "purpleDragon392",
+    "javascript": {
+      "accuracy": 100,
+      "time": 7
+    },
+    "css": {
+      "accuracy": 99,
+      "time": 4
+    },
+    "html": {
+      "accuracy": 76,
+      "time": 9
+    }
+
 }
