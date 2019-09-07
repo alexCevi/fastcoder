@@ -22,7 +22,7 @@ interface ExerciseType {
 })
 export class ExercisecontainerComponent implements OnInit {
 
-  readonly configUrl = './assets/exercises/exercises.json';
+  readonly configUrl = 'http://localhost:8080/api/exercises';
   constructor(private http: HttpClient, private exerciseService: ExerciseDataProviderService, private router: Router) { }
 
   exercies$: Observable<ExerciseType[]>;
