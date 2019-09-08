@@ -6,7 +6,7 @@ var leaderboardSchema = mongoose.Schema({
     required: true
   },
   firstPlaceUser: {
-    type: Object,
+    type: Array,
     required: true
   },
   secondPlaceUser: {
