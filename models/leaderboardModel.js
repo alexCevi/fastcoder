@@ -10,11 +10,11 @@ var leaderboardSchema = mongoose.Schema({
     required: true
   },
   secondPlaceUser: {
-    type: String,
+    type: Array,
     required: true
   },
   thirdPlaceUser: {
-    type: String,
+    type: Array,
     required: true
   }
 });
