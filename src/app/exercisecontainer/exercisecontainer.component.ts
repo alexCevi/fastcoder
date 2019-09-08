@@ -1,19 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
 import { ExerciseDataProviderService } from '../services/exercise-data-provider.service';
 import { Router } from '@angular/router';
-
-
-
-interface ExerciseType {
-  id: string;
-  title: string;
-  imgUrl: string;
-  desc: string;
-  tag: string;
-  questionData: Array<string>;
-}
+import { HttputilsService } from '../services/httputils.service';
 
 @Component({
   selector: 'app-exercisecontainer',
@@ -21,14 +9,11 @@ interface ExerciseType {
   styleUrls: ['./exercisecontainer.component.scss']
 })
 export class ExercisecontainerComponent implements OnInit {
-
-  readonly configUrl = 'https://fast-coder-app-7948.nodechef.com/api/exercises';
-  constructor(private http: HttpClient, private exerciseService: ExerciseDataProviderService, private router: Router) { }
-
-  exercies$: Observable<ExerciseType[]>;
+  exercies$;
+  constructor(private http: HttputilsService, private exerciseService: ExerciseDataProviderService, private router: Router) { }
 
   ngOnInit() {
-    this.exercies$ = this.http.get<ExerciseType[]>(this.configUrl);
+    this.exercies$ = this.http.getExercises();
   }
 
   sendExercise(title: string, questionData: Array<string>) {
