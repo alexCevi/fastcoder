@@ -35,3 +35,9 @@
     }
   }
 }
+@media (min-width: 320px) and (max-width: 480px) {
+  .innerWrapper {
+    // width: 100% !important;
+    flex-direction: column;
+  }
+}
