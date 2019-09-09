@@ -26,11 +26,12 @@
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
   .innerWrapper {
-    width: 75% !important;
+    width: 100% !important;
   }
   .componentWrapper {
     h1 {
       padding-top: 0 !important;
+      margin-top: 0;
     }
   }
 }
