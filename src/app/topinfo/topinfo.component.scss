@@ -14,6 +14,7 @@
   padding-top: 60px;
   margin: 0;
   padding-bottom: 100px;
+  width: 900px;
   h1 {
     color: white;
     line-height: 1.6rem;
@@ -67,5 +68,18 @@
   }
   #mainIntoTag {
     font-size: 60px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  #mainIntoTag {
+    font-size: 55px;
+  }
+  .introContainer {
+    p {
+      width: 100%;
+    }
+  }
+  .slash {
+    display: none;
   }
 }
