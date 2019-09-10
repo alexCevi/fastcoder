@@ -41,4 +41,10 @@ export class HttputilsService {
     return this.http.get<LeaderboardData[]>(this.apiConfigUrl + 'leaderboards');
   }
 
+  getLeaderboardWithId(id: string) {
+    return this.http.get<LeaderboardData[]>(this.apiConfigUrl + 'leaderboards' + '/' + id);
+
+  }
+
+
 }

@@ -46,8 +46,6 @@ export class ExerciseareaComponent implements OnInit {
     } else {
       let userAccuracy = this.expectedAccuracy - this.corrections;
       this.exercise.accuracy = (userAccuracy / this.expectedAccuracy) * 100;
-      console.log(this.expectedAccuracy);
-      console.log(this.corrections);
     }
   }
 

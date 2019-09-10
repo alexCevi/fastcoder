@@ -32,10 +32,14 @@
       class="exerciseDataDisply"
       id="exerciseReportContainer"
     >
-      <h4>Accuracy</h4>
-      <span>{{ exercise.accuracy }}%</span>
-      <h4 id="wpmHeader">Elapsed Time</h4>
-      <span>{{ timer.elapsed }}s</span>
+      <div class="accuracyContainer">
+        <h4>Accuracy</h4>
+        <span>{{ exercise.accuracy }}%</span>
+      </div>
+      <div class="timeContainer">
+        <h4 id="wpmHeader">Elapsed Time</h4>
+        <span>{{ timer.elapsed }}s</span>
+      </div>
       <br />
       <br />
       <button (click)="restart()" class="buttonAlternative-medium">
