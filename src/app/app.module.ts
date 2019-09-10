@@ -15,6 +15,8 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { AutofocusModule } from 'angular-autofocus-fix';
 import { HttpClientModule } from '@angular/common/http';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { BottomctaComponent } from './bottomcta/bottomcta.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -26,7 +28,9 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     ExercisecontainerComponent,
     TopinfoComponent,
     ExerciseareaComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    BottomctaComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -13,8 +13,6 @@
   padding-top: 40px;
 }
 .tableWrapper {
-  margin-bottom: 30%;
-
   table {
     border-collapse: collapse;
     width: 100%;
@@ -47,5 +45,18 @@
   }
   .fa-crown {
     color: gold;
+  }
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .componentWrapper {
+    margin: 0 2%;
+  }
+  #topTitle {
+    font-size: 38px;
+  }
+  .tableWrapper {
+    th {
+      font-size: 1.4rem;
+    }
   }
 }

@@ -37,7 +37,7 @@
 }
 @media (min-width: 320px) and (max-width: 480px) {
   .innerWrapper {
-    // width: 100% !important;
-    flex-direction: column;
+    justify-content: flex-start;
+    width: 85% !important;
   }
 }

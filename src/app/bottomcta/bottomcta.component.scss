@@ -1,0 +1,31 @@
+@import "../scss/main";
+
+.componentWrapper {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  text-align: center;
+  font-size: 80px;
+  color: #432c85;
+  padding-top: 40px;
+  margin-bottom: 2%;
+}
+button {
+  color: black;
+  margin-bottom: 3%;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  h1 {
+    font-size: 60px;
+    padding-top: 0;
+  }
+  button {
+    width: 75% !important;
+    margin-top: 2%;
+    margin-bottom: 10%;
+  }
+}

@@ -53,3 +53,19 @@
     display: none;
   }
 }
+@media (min-width: 320px) and (max-width: 480px) {
+  .hiddenSmall {
+    display: none;
+    font-size: 100px;
+  }
+  .introContainer {
+    padding-left: 3%;
+    padding-top: 30px;
+    p {
+      width: 365px;
+    }
+  }
+  #mainIntoTag {
+    font-size: 60px;
+  }
+}
