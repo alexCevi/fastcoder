@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttputilsService } from './httputils.service';
 import { Observable } from 'rxjs';
+import { TimerService } from './timer.service';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExerciseDataProviderService {
-  constructor(private http: HttputilsService) { }
+  constructor(private http: HttputilsService, private timer: TimerService) { }
   leaders$
   testingOBV$
 
@@ -20,11 +21,28 @@ export class ExerciseDataProviderService {
   time = 0;
   testingData: any[];
 
-  validateLeader() {
+  validateLeader(userAccuracy: number) {
     this.leaders$ = this.http.getLeaderboardByid(this.leaderboardId);
     this.leaders$.subscribe(res => {
-      this.testingData = res.data.firstPlaceUser;
-      console.log(this.testingData);
+      console.log('working');
+      if (this.timer.elapsed < res.data.firstPlaceUser.time && this.accuracy > res.data.firstPlaceUser.accuracy) {
+        console.log('fist place');
+      } else if (this.timer.elapsed < res.data.secondPlaceUser.time && this.accuracy > res.data.secondPlaceUser.accuracy) {
+        console.log('second Place');
+      } else if (this.timer.elapsed < res.data.thirdPlaceUser.time && this.accuracy > res.data.thirdPlaceUser.accuracy) {
+        console.log('third place');
+      }
+
+
+
+
+
+      // userTime = res.data.firstPlaceUser.time;
+
+
+
+
+
     });
   }
 }
