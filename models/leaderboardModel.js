@@ -8,14 +8,6 @@ var leaderboardSchema = mongoose.Schema({
   firstPlaceUser: {
     type: Object,
     required: true
-  },
-  secondPlaceUser: {
-    type: Object,
-    required: true
-  },
-  thirdPlaceUser: {
-    type: Object,
-    required: true
   }
 });
 
