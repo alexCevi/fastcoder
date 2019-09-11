@@ -14,6 +14,6 @@ export class LeaderboardComponent implements OnInit {
 
   ngOnInit() {
     this.leaderboards$ = this.http.getLeaderboards();
-    console.log(this.leaderboards$);
+
   }
 }

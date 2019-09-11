@@ -26,10 +26,6 @@ export class ExerciseDataProviderService {
       console.log('working');
       if (this.timer.elapsed < res.data.firstPlaceUser.time && this.accuracy > res.data.firstPlaceUser.accuracy) {
         console.log('fist place');
-      } else if (this.timer.elapsed < res.data.secondPlaceUser.time && this.accuracy > res.data.secondPlaceUser.accuracy) {
-        console.log('second Place');
-      } else if (this.timer.elapsed < res.data.thirdPlaceUser.time && this.accuracy > res.data.thirdPlaceUser.accuracy) {
-        console.log('third place');
       }
     });
   }
