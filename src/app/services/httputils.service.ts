@@ -8,6 +8,7 @@ interface ExerciseType {
   imgUrl: string;
   desc: string;
   tag: string;
+  leaderboard_id: string;
   questionData: Array<string>;
 }
 
@@ -34,16 +35,15 @@ export class HttputilsService {
   constructor(private http: HttpClient) { }
 
   getExercises() {
-    return this.http.get<LeaderboardData[]>(this.apiConfigUrl + 'exercises');
+    return this.http.get<ExerciseType[]>(this.apiConfigUrl + 'exercises');
   }
 
   getLeaderboards() {
     return this.http.get<LeaderboardData[]>(this.apiConfigUrl + 'leaderboards');
   }
 
-  getLeaderboardWithId(id: string) {
+  getLeaderboardByid(id: string) {
     return this.http.get<LeaderboardData[]>(this.apiConfigUrl + 'leaderboards' + '/' + id);
-
   }
 
 

@@ -16,9 +16,10 @@ export class ExercisecontainerComponent implements OnInit {
     this.exercies$ = this.http.getExercises();
   }
 
-  sendExercise(title: string, questionData: Array<string>) {
+  sendExercise(title: string, questionData: Array<string>, leaderboardId: string) {
     this.exerciseService.title = title;
     this.exerciseService.data = questionData;
+    this.exerciseService.leaderboardId = leaderboardId;
     this.router.navigate(['train']);
   }
 

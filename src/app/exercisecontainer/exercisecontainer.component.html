@@ -2,7 +2,7 @@
   <h1 id="containerTitle">Select An Exercise</h1>
   <div class="innerWrapper">
     <div
-      (click)="sendExercise(data.title, data.questionData)"
+      (click)="sendExercise(data.title, data.questionData, data.leaderboardid)"
       *ngFor="let data of exercies$ | async"
       class="card flex-item"
     >
