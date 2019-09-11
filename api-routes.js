@@ -25,7 +25,6 @@ router
 router
   .route("/leaderboards")
   .get(leaderboardController.index)
-  .put(leaderboardController.update)
   .post(leaderboardController.new);
 
 router
