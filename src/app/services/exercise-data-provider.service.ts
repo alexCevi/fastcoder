@@ -19,9 +19,8 @@ export class ExerciseDataProviderService {
   leaderboardId: string;
   number = 0;
   time = 0;
-  testingData: any[];
 
-  validateLeader(userAccuracy: number) {
+  validateLeader() {
     this.leaders$ = this.http.getLeaderboardByid(this.leaderboardId);
     this.leaders$.subscribe(res => {
       console.log('working');
@@ -32,17 +31,6 @@ export class ExerciseDataProviderService {
       } else if (this.timer.elapsed < res.data.thirdPlaceUser.time && this.accuracy > res.data.thirdPlaceUser.accuracy) {
         console.log('third place');
       }
-
-
-
-
-
-      // userTime = res.data.firstPlaceUser.time;
-
-
-
-
-
     });
   }
 }
