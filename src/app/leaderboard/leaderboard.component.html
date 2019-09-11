@@ -7,24 +7,16 @@
         <th>Accuracy</th>
         <th>Time</th>
       </tr>
-      <tr *ngFor="let firstPlace of data.firstPlaceUser">
+      <!-- <tr>
         <td id="username">
           <i class="fas fa-crown"></i>
-          {{ firstPlace.userName }}
+          {{ data.fistPlaceUser.userName }}
         </td>
-        <td>{{ firstPlace.accuracy }}</td>
-        <td>{{ firstPlace.time }}</td>
-      </tr>
-      <tr *ngFor="let secondPlace of data.secondPlaceUser">
-        <td id="username">{{ secondPlace.userName }}</td>
-        <td>{{ secondPlace.accuracy }}</td>
-        <td>{{ secondPlace.time }}</td>
-      </tr>
-      <tr *ngFor="let thirdPlace of data.thirdPlaceUser">
-        <td id="username">{{ thirdPlace.userName }}</td>
-        <td>{{ thirdPlace.accuracy }}</td>
-        <td>{{ thirdPlace.time }}</td>
-      </tr>
+        <td>{{ data.fistPlaceUser.accuracy }}</td>
+        <td>{{ data.fistPlaceUser.time }}</td>
+      </tr> -->
     </table>
   </div>
 </div>
+
+<!-- *ngFor="let firstPlace of data.firstPlaceUser" -->

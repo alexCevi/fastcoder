@@ -14,13 +14,12 @@ interface ExerciseType {
 
 interface LeaderboardData {
   catagory: string;
-  firstPlaceUser: {
+  firstPlaceUser:
+  {
     username: string;
     accuracy: number;
     time: number;
   };
-  secondPlaceUser: string;
-  thirdPlaceUser: string;
 }
 
 @Injectable({
@@ -31,6 +30,7 @@ export class HttputilsService {
   readonly apiConfigUrl = 'https://fast-coder-app-7948.nodechef.com/api/';
   private exercies$: Observable<ExerciseType[]>;
   private leaderboard$: Observable<LeaderboardData[]>;
+
 
   constructor(private http: HttpClient) { }
 
