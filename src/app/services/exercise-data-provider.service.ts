@@ -9,23 +9,27 @@ import { TimerService } from './timer.service';
 })
 export class ExerciseDataProviderService {
   constructor(private http: HttputilsService, private timer: TimerService) { }
-  leaders$
-  testingOBV$
+  leaders$;
 
   title: string;
   data: string[];
   accuracy: number;
   question: string;
   leaderboardId: string;
+  isLeader = false;
   number = 0;
   time = 0;
 
   validateLeader() {
     this.leaders$ = this.http.getLeaderboardByid(this.leaderboardId);
     this.leaders$.subscribe(res => {
+      this.leaders$ = res;
       console.log('working');
       if (this.timer.elapsed < res.data.firstPlaceUser.time && this.accuracy > res.data.firstPlaceUser.accuracy) {
         console.log('fist place');
+        this.isLeader = true;
+      } else {
+        console.log(this.leaders$);
       }
     });
   }

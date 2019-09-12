@@ -32,19 +32,49 @@
       class="exerciseDataDisply"
       id="exerciseReportContainer"
     >
-      <div class="accuracyContainer">
-        <h4>Accuracy</h4>
-        <span>{{ exercise.accuracy }}%</span>
+      <div class="reportInnerWrapper">
+        <div class="accuracyContainer">
+          <h4>Accuracy</h4>
+          <span>{{ exercise.accuracy }}%</span>
+        </div>
+        <div class="timeContainer">
+          <h4 id="wpmHeader">Elapsed Time</h4>
+          <span>{{ timer.elapsed }}s</span>
+        </div>
       </div>
-      <div class="timeContainer">
-        <h4 id="wpmHeader">Elapsed Time</h4>
-        <span>{{ timer.elapsed }}s</span>
+      <div *ngIf="exercise.isLeader" class="newLeader">
+        <h1>New high score</h1>
+        <input
+          id="newLeaderInput"
+          placeholder="Enter username here"
+          autofocus
+        />
+        <button id="usernameSubmit">Submit</button>
       </div>
-      <br />
-      <br />
-      <button (click)="restart()" class="buttonAlternative-medium">
-        Restart Exercise
-      </button>
+      <div clas="notLeader" *ngIf="!exercise.isLeader">
+        <div class="tableWrapper">
+          <table>
+            <tr>
+              <th id="exerciseType">
+                User
+              </th>
+              <th>Accuracy</th>
+              <th>Time</th>
+            </tr>
+            <tr>
+              <td id="username">
+                <i class="fas fa-crown"></i>
+                {{ exercise.leaders$.data.firstPlaceUser.userName }}
+              </td>
+              <td>{{ exercise.leaders$.data.firstPlaceUser.accuracy }}%</td>
+              <td>{{ exercise.leaders$.data.firstPlaceUser.time }}s</td>
+            </tr>
+          </table>
+        </div>
+        <button (click)="restart()" class="buttonAlternative-medium">
+          Restart Exercise
+        </button>
+      </div>
     </div>
   </div>
 </div>

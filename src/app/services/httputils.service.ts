@@ -31,7 +31,6 @@ export class HttputilsService {
   private exercies$: Observable<ExerciseType[]>;
   private leaderboard$: Observable<LeaderboardData[]>;
 
-
   constructor(private http: HttpClient) { }
 
   getExercises() {
