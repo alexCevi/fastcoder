@@ -46,8 +46,8 @@
   width: 20%;
   padding: 0.382em 1em;
   background-color: transparent;
-  color: $brandGreen;
-  border: 1px solid $brandGreen;
+  color: $brandBlue;
+  border: 1px solid $brandBlue;
   border-radius: 30px;
   font-size: 1.3rem;
   cursor: pointer;
@@ -55,7 +55,7 @@
 .buttonCta:hover {
   transition: 0.3s;
   font-weight: 400;
-  border: 1px solid $brandBlue;
-  color: $brandBlue;
+  border: 1px solid $brandGreen;
+  color: $brandGreen;
   transform: scale(1.1);
 }

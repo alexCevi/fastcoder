@@ -88,6 +88,7 @@ export class ExerciseareaComponent implements OnInit {
   }
   ngOnDestroy() {
     this.timer.clearCount();
+    this.exercise.isLeader = false;
   }
 }
 
