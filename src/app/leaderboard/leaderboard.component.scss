@@ -1,9 +1,10 @@
 @import "../scss/main";
 
 .componentWrapper {
-  margin: 0% 15%;
+  margin: 0% 20%;
   background-color: white;
   border-radius: 30px;
+  margin-bottom: 3%;
 }
 #topTitle {
   color: white;
@@ -32,6 +33,7 @@
   }
   #username {
     padding: 10px 50px;
+    width: 50%;
   }
 
   td {

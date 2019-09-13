@@ -65,6 +65,5 @@ export class HttputilsService {
       }
     };
     this.http.put(this.apiConfigUrl + 'leaderboards' + '/' + id, data).subscribe(res => console.log(res));
-    console.log('FROM HTTP' + data.firstPlaceUser.accuracy + '=== ' + id);
   }
 }

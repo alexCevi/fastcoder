@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { BottomctaComponent } from './bottomcta/bottomcta.component';
 import { FooterComponent } from './footer/footer.component';
+import { SelectviewComponent } from './selectview/selectview.component';
 
 
 
@@ -30,7 +31,8 @@ import { FooterComponent } from './footer/footer.component';
     ExerciseareaComponent,
     LeaderboardComponent,
     BottomctaComponent,
-    FooterComponent
+    FooterComponent,
+    SelectviewComponent
   ],
   imports: [
     BrowserModule,
