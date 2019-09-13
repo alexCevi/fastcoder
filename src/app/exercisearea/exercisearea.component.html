@@ -59,8 +59,9 @@
         <p>{{ leaderboardMessage }}</p>
       </div>
       <div clas="notLeader" *ngIf="!exercise.isLeader">
+        <h4 id="leaderboardHeader">Current Leader</h4>
         <div class="tableWrapper">
-          <table>
+          <table style="text-align: left !important;">
             <tr>
               <th id="exerciseType">
                 User
@@ -69,7 +70,7 @@
               <th>Time</th>
             </tr>
             <tr>
-              <td id="username">
+              <td>
                 <i class="fas fa-crown"></i>
                 {{ exercise.leaders$.data.firstPlaceUser.userName }}
               </td>
