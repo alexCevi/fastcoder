@@ -46,10 +46,16 @@
         <h1>New high score</h1>
         <input
           id="newLeaderInput"
+          #newLeaderInput
           placeholder="Enter username here"
           autofocus
         />
-        <button id="usernameSubmit">Submit</button>
+        <button
+          (click)="getNewLeaderName(newLeaderInput.value)"
+          id="usernameSubmit"
+        >
+          Submit
+        </button>
       </div>
       <div clas="notLeader" *ngIf="!exercise.isLeader">
         <div class="tableWrapper">

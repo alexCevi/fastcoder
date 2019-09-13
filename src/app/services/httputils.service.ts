@@ -22,6 +22,16 @@ interface LeaderboardData {
   };
 }
 
+interface Post {
+  catagory: string;
+  firstPlaceUser: {
+    userName: string,
+    accuracy: number,
+    time: number
+  };
+}
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -45,5 +55,16 @@ export class HttputilsService {
     return this.http.get<LeaderboardData[]>(this.apiConfigUrl + 'leaderboards' + '/' + id);
   }
 
-
+  postNewLeader(username: string, userAccuracy: number, userTime: number, id: string, exerciseCatagory: string) {
+    const data: Post = {
+      catagory: exerciseCatagory,
+      firstPlaceUser: {
+        userName: username,
+        accuracy: userAccuracy,
+        time: userTime
+      }
+    };
+    this.http.put(this.apiConfigUrl + 'leaderboards' + '/' + id, data).subscribe(res => console.log(res));
+    console.log('FROM HTTP' + data.firstPlaceUser.accuracy + '=== ' + id);
+  }
 }

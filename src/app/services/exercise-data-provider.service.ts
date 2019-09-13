@@ -16,9 +16,11 @@ export class ExerciseDataProviderService {
   accuracy: number;
   question: string;
   leaderboardId: string;
+  leaderUsername: string;
   isLeader = false;
   number = 0;
   time = 0;
+
 
   validateLeader() {
     this.leaders$ = this.http.getLeaderboardByid(this.leaderboardId);
@@ -33,4 +35,10 @@ export class ExerciseDataProviderService {
       }
     });
   }
+
+  postNewLeader() {
+    this.http.postNewLeader(this.leaderUsername, this.accuracy, this.timer.elapsed, this.leaderboardId, this.title);
+    console.log('posting new leader');
+  }
 }
+

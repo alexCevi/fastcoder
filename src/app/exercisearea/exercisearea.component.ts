@@ -17,6 +17,7 @@ export class ExerciseareaComponent implements OnInit {
   hasFinished = false;
 
 
+
   constructor(
     public exercise: ExerciseDataProviderService,
     public timer: TimerService,
@@ -48,6 +49,12 @@ export class ExerciseareaComponent implements OnInit {
       this.exercise.accuracy = (userAccuracy / this.expectedAccuracy) * 100;
     }
     this.exercise.validateLeader();
+  }
+
+  getNewLeaderName(username: string) {
+    this.exercise.leaderUsername = username;
+    this.exercise.postNewLeader();
+    console.log('button is working');
   }
 
   updateExerciseData() {
