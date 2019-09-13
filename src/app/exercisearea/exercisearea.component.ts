@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ExerciseDataProviderService } from '../services/exercise-data-provider.service';
 import { TimerService } from '../services/timer.service';
 import { CardmodifierService } from '../services/cardmodifier.service';
@@ -15,6 +15,7 @@ export class ExerciseareaComponent implements OnInit {
   expectedAccuracy = 0;
   hasStarted = false;
   hasFinished = false;
+  leaderboardMessage: string;
 
 
 
@@ -54,7 +55,10 @@ export class ExerciseareaComponent implements OnInit {
   getNewLeaderName(username: string) {
     this.exercise.leaderUsername = username;
     this.exercise.postNewLeader();
-    console.log('button is working');
+    this.leaderboardMessage = 'leaderboard Updated';
+    setTimeout(() => {
+      this.router.navigate(['select']);
+    }, 2000);
   }
 
   updateExerciseData() {
@@ -82,4 +86,8 @@ export class ExerciseareaComponent implements OnInit {
       this.router.navigate(['select']);
     }
   }
+  ngOnDestroy() {
+    this.timer.clearCount();
+  }
 }
+
