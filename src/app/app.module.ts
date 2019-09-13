@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -39,6 +40,7 @@ import { SelectviewComponent } from './selectview/selectview.component';
     AppRoutingModule,
     FormsModule,
     ScrollToModule.forRoot(),
+    DeviceDetectorModule.forRoot(),
     AutofocusModule,
     HttpClientModule
   ],
