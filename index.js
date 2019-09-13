@@ -3,7 +3,9 @@ let bodyParser = require("body-parser");
 let mongoose = require("mongoose");
 var cors = require("cors");
 let app = express();
-app.use(cors());
+const corsOptions = {
+  origin: "https://fastcoderapp.com"
+};
 
 // Import routes
 let apiRoutes = require("./api-routes");
@@ -32,7 +34,7 @@ var port = process.env.PORT || 8080;
 
 // Send message for default URL
 // TODO ADD SOMETHING FOR AUTH HERE WITH BEARER TOKENS
-app.get("/", (req, res) => res.send("API location"));
+app.get("/",cors(corsOptions), (req, res) => res.send("API location"));
 
 app.use("/api", apiRoutes);
 
