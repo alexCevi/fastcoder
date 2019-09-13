@@ -28,6 +28,7 @@
 #exerciseDesc {
   color: white;
   padding: 15px 0;
+  height: 125px;
 }
 #exerciseIcon {
   text-align: center;
@@ -36,4 +37,15 @@
   display: flex;
   justify-content: center;
   margin-top: 10%;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .card {
+    width: 100%;
+    margin: 3.5% !important;
+  }
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 900px) {
+  .card {
+    width: 50%;
+  }
 }

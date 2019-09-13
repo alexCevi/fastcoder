@@ -1,8 +1,7 @@
 @import "../scss/main";
 
 .componentWrapper {
-  margin-right: 15%;
-  margin-left: 15%;
+  margin: 2% 15%;
 }
 .titleContainer {
   margin-top: 2%;
@@ -76,6 +75,62 @@
     text-align: center;
   }
 }
+.reportInnerWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  h4 {
+    font-size: 3rem;
+    margin-top: 4% !important;
+  }
+}
+.newLeader {
+  h1 {
+    font-size: 55px !important;
+    margin-top: 3% !important;
+    margin-bottom: 2% !important;
+    font-weight: 300 !important;
+  }
+  input {
+    margin-top: 10px;
+    width: 350px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid $brandBlue;
+    padding: 15px;
+    border-right: none;
+    font-size: 20px;
+    text-align: center;
+  }
+  button {
+    margin-top: 10px;
+    width: 150px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid $brandBlue;
+    background-color: $brandBlue;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      transition: 300ms;
+      background-color: $brandGreen;
+      border-left: 0px;
+      border: 1px solid #09e790;
+    }
+  }
+}
+.notLeader {
+  display: flex;
+  flex-direction: column;
+}
 .exerciseButton {
   margin-bottom: 3%;
   margin-top: 2%;
@@ -100,5 +155,23 @@
   span {
     font-size: 2.5rem;
     color: $brandGreen;
+  }
+}
+#leaderboardHeader {
+  font-size: 3rem;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+.tableWrapper {
+  margin-bottom: 4%;
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  .exerciseDataDisply {
+    width: 85% !important;
+  }
+  .titleContainer {
+    h1 {
+      margin: 0;
+    }
   }
 }

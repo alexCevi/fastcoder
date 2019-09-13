@@ -1,9 +1,10 @@
 @import "../scss/main";
 
 .componentWrapper {
-  margin: 0% 15%;
+  margin: 0% 20%;
   background-color: white;
   border-radius: 30px;
+  margin-bottom: 3%;
 }
 #topTitle {
   color: white;
@@ -12,40 +13,16 @@
   color: $brandPurple;
   padding-top: 40px;
 }
-.tableWrapper {
-  margin-bottom: 30%;
-
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    border-radius: 30px;
-    background-color: white;
+@media (min-width: 320px) and (max-width: 480px) {
+  .componentWrapper {
+    margin: 0 2%;
   }
-
-  th {
-    text-align: left;
-    border: none;
-    font-size: 1.5rem;
-    font-weight: 400;
-    background-color: #004bf814;
+  #topTitle {
+    font-size: 38px;
   }
-  #exerciseType {
-    padding: 15px;
-  }
-  #username {
-    padding: 10px 50px;
-  }
-
-  td {
-    border-bottom: 1px solid #ededed;
-  }
-  tr:last-child > td {
-    border-bottom: 0;
-  }
-  #top {
-    border-radius: 30px;
-  }
-  .fa-crown {
-    color: gold;
+  .tableWrapper {
+    th {
+      font-size: 1.4rem;
+    }
   }
 }

@@ -2,7 +2,7 @@
   <h1 id="containerTitle">Select An Exercise</h1>
   <div class="innerWrapper">
     <div
-      (click)="sendExercise(data.title, data.questionData)"
+      (click)="sendExercise(data.title, data.questionData, data.leaderboardid)"
       *ngFor="let data of exercies$ | async"
       class="card flex-item"
     >
@@ -10,9 +10,7 @@
         <h4>{{ data.title }}</h4>
         <i id="exerciseIcon" class="{{ data.tag }}"></i>
         <p id="exerciseDesc">
-          with the release of Letraset sheets containing Lorem Ipsum passages,
-          and more recently with desktop publishing software like Aldus
-          PageMaker including versions of Lorem Ipsum
+          {{ data.desc }}
         </p>
         <button class="buttonAlternative">
           Continue

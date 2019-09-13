@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +16,9 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { AutofocusModule } from 'angular-autofocus-fix';
 import { HttpClientModule } from '@angular/common/http';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { BottomctaComponent } from './bottomcta/bottomcta.component';
+import { FooterComponent } from './footer/footer.component';
+import { SelectviewComponent } from './selectview/selectview.component';
 
 
 
@@ -26,13 +30,17 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     ExercisecontainerComponent,
     TopinfoComponent,
     ExerciseareaComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    BottomctaComponent,
+    FooterComponent,
+    SelectviewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ScrollToModule.forRoot(),
+    DeviceDetectorModule.forRoot(),
     AutofocusModule,
     HttpClientModule
   ],

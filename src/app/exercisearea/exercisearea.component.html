@@ -32,15 +32,57 @@
       class="exerciseDataDisply"
       id="exerciseReportContainer"
     >
-      <h4>Accuracy</h4>
-      <span>{{ exercise.accuracy }}%</span>
-      <h4 id="wpmHeader">Elapsed Time</h4>
-      <span>{{ timer.elapsed }}s</span>
-      <br />
-      <br />
-      <button (click)="restart()" class="buttonAlternative-medium">
-        Restart Exercise
-      </button>
+      <div class="reportInnerWrapper">
+        <div class="accuracyContainer">
+          <h4>Accuracy</h4>
+          <span>{{ exercise.accuracy }}%</span>
+        </div>
+        <div class="timeContainer">
+          <h4 id="wpmHeader">Elapsed Time</h4>
+          <span>{{ timer.elapsed }}s</span>
+        </div>
+      </div>
+      <div *ngIf="exercise.isLeader" class="newLeader">
+        <h1>New high score</h1>
+        <input
+          id="newLeaderInput"
+          #newLeaderInput
+          placeholder="Enter username here"
+          autofocus
+        />
+        <button
+          (click)="getNewLeaderName(newLeaderInput.value)"
+          id="usernameSubmit"
+        >
+          Submit
+        </button>
+        <p>{{ leaderboardMessage }}</p>
+      </div>
+      <div clas="notLeader" *ngIf="!exercise.isLeader">
+        <h4 id="leaderboardHeader">Current Leader</h4>
+        <div class="tableWrapper">
+          <table style="text-align: left !important;">
+            <tr>
+              <th id="exerciseType">
+                User
+              </th>
+              <th>Accuracy</th>
+              <th>Time</th>
+            </tr>
+            <tr>
+              <td>
+                <i class="fas fa-crown"></i>
+                {{ exercise.leaders$.data.firstPlaceUser.userName }}
+              </td>
+              <td>{{ exercise.leaders$.data.firstPlaceUser.accuracy }}%</td>
+              <td>{{ exercise.leaders$.data.firstPlaceUser.time }}s</td>
+            </tr>
+          </table>
+        </div>
+        <button (click)="restart()" class="buttonAlternative-medium">
+          Restart Exercise
+        </button>
+      </div>
     </div>
   </div>
 </div>

@@ -8,19 +8,29 @@ interface ExerciseType {
   imgUrl: string;
   desc: string;
   tag: string;
+  leaderboard_id: string;
   questionData: Array<string>;
 }
 
 interface LeaderboardData {
   catagory: string;
-  firstPlaceUser: {
+  firstPlaceUser:
+  {
     username: string;
     accuracy: number;
     time: number;
   };
-  secondPlaceUser: string;
-  thirdPlaceUser: string;
 }
+
+interface Post {
+  catagory: string;
+  firstPlaceUser: {
+    userName: string,
+    accuracy: number,
+    time: number
+  };
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -34,11 +44,26 @@ export class HttputilsService {
   constructor(private http: HttpClient) { }
 
   getExercises() {
-    return this.http.get<LeaderboardData[]>(this.apiConfigUrl + 'exercises');
+    return this.http.get<ExerciseType[]>(this.apiConfigUrl + 'exercises');
   }
 
   getLeaderboards() {
     return this.http.get<LeaderboardData[]>(this.apiConfigUrl + 'leaderboards');
   }
 
+  getLeaderboardByid(id: string) {
+    return this.http.get<LeaderboardData[]>(this.apiConfigUrl + 'leaderboards' + '/' + id);
+  }
+
+  postNewLeader(username: string, userAccuracy: number, userTime: number, id: string, exerciseCatagory: string) {
+    const data: Post = {
+      catagory: exerciseCatagory,
+      firstPlaceUser: {
+        userName: username,
+        accuracy: userAccuracy,
+        time: userTime
+      }
+    };
+    this.http.put(this.apiConfigUrl + 'leaderboards' + '/' + id, data).subscribe(res => console.log(res));
+  }
 }

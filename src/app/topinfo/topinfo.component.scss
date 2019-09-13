@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
 }
-#slash {
+.slash {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -14,6 +14,7 @@
   padding-top: 60px;
   margin: 0;
   padding-bottom: 100px;
+  width: 900px;
   h1 {
     color: white;
     line-height: 1.6rem;
@@ -38,10 +39,47 @@
 }
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
   .introContainer {
-    padding-left: 5rem;
-    padding-top: 40px;
+    padding-left: 10%;
+    padding-top: 35px;
     h1 {
       font-size: 3.2rem !important;
     }
+  }
+  #slashLarge {
+    display: none;
+  }
+}
+@media (min-width: 1281px) {
+  #slashMedium {
+    display: none;
+  }
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .hiddenSmall {
+    display: none;
+    font-size: 100px;
+  }
+  .introContainer {
+    padding-left: 3%;
+    padding-top: 30px;
+    p {
+      width: 365px;
+    }
+  }
+  #mainIntoTag {
+    font-size: 60px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  #mainIntoTag {
+    font-size: 55px;
+  }
+  .introContainer {
+    p {
+      width: 100%;
+    }
+  }
+  .slash {
+    display: none;
   }
 }
