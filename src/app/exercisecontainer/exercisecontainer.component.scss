@@ -41,8 +41,18 @@
     width: 85% !important;
   }
 }
-@media only screen and (min-device-width: 480px) and (max-device-width: 1200px) {
+@media only screen and (min-device-width: 480px) and (max-device-width: 1700px) {
   .innerWrapper {
     width: 100%;
+  }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .innerWrapper {
+    width: 100%;
+  }
+  .componentWrapper {
+    h1 {
+      margin-top: 3%;
+    }
   }
 }

@@ -6,7 +6,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 33vw;
+  height: 100%;
   z-index: -1;
 }
 .introContainer {
@@ -37,7 +37,7 @@
     padding-left: 50%;
   }
 }
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+@media screen and (min-device-width: 700px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
   .introContainer {
     padding-left: 10%;
     padding-top: 35px;
@@ -45,16 +45,12 @@
       font-size: 3.2rem !important;
     }
   }
-  #slashLarge {
-    display: none;
+  .slash {
+    height: 65%;
   }
 }
-@media (min-width: 1281px) {
-  #slashMedium {
-    display: none;
-  }
-}
-@media (min-width: 320px) and (max-width: 480px) {
+
+@media (min-width: 320px) and (max-width: 692px) {
   .hiddenSmall {
     display: none;
     font-size: 100px;
