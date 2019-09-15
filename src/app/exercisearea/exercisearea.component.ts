@@ -16,6 +16,7 @@ export class ExerciseareaComponent implements OnInit {
   hasStarted = false;
   hasFinished = false;
   leaderboardMessage: string;
+  leaderboardSpinner: string;
 
 
 
@@ -56,9 +57,10 @@ export class ExerciseareaComponent implements OnInit {
     this.exercise.leaderUsername = username;
     this.exercise.postNewLeader();
     this.leaderboardMessage = 'leaderboard Updated';
+    this.leaderboardSpinner = 'fa fa-spinner fa-spin fa-2x fa-fw';
     setTimeout(() => {
       this.router.navigate(['select']);
-    }, 2000);
+    }, 800);
   }
 
   updateExerciseData() {
