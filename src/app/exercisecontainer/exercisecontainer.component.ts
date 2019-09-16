@@ -24,7 +24,7 @@ export class ExercisecontainerComponent implements OnInit {
   }
 
   sendExercise(title: string, questionData: Array<string>, leaderboardId: string) {
-    if (this.deviceServices.isMobile() === true) {
+    if (this.deviceServices.isMobile() === true || this.deviceServices.isTablet() === true) {
       alert('BETA MODE: training on mobile is not currently implemented')
     } else {
       this.exerciseService.title = title;

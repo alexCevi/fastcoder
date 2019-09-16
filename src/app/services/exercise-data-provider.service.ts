@@ -26,19 +26,14 @@ export class ExerciseDataProviderService {
     this.leaders$ = this.http.getLeaderboardByid(this.leaderboardId);
     this.leaders$.subscribe(res => {
       this.leaders$ = res;
-      console.log('working');
       if (this.timer.elapsed < res.data.firstPlaceUser.time && this.accuracy > res.data.firstPlaceUser.accuracy) {
-        console.log('fist place');
         this.isLeader = true;
-      } else {
-        console.log(this.leaders$);
       }
     });
   }
 
   postNewLeader() {
     this.http.postNewLeader(this.leaderUsername, this.accuracy, this.timer.elapsed, this.leaderboardId, this.title);
-    console.log('posting new leader');
   }
 }
 
