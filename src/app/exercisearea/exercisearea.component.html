@@ -10,6 +10,7 @@
     >
       <h2 *ngIf="hasStarted">{{ this.exercise.data[this.exercise.number] }}</h2>
       <h3 *ngIf="!hasStarted">Type the syntax that appears in this box</h3>
+
       <button
         class="buttonAlternative-medium"
         (click)="start()"
@@ -57,6 +58,7 @@
           Submit
         </button>
         <p>{{ leaderboardMessage }}</p>
+        <i class="{{ leaderboardSpinner }}"></i>
       </div>
       <div clas="notLeader" *ngIf="!exercise.isLeader">
         <h4 id="leaderboardHeader">Current Leader</h4>

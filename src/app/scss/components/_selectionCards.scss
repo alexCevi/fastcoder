@@ -49,3 +49,8 @@
     width: 50%;
   }
 }
+@media (min-width: 900px) and (max-width: 1300px) {
+  .card {
+    width: 31%;
+  }
+}
