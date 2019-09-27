@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-selectview',
   templateUrl: './selectview.component.html',
   styleUrls: ['./selectview.component.scss']
 })
-export class SelectviewComponent implements OnInit {
-
+export class SelectviewComponent{
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

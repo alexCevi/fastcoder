@@ -17,13 +17,11 @@ export class ExerciseareaComponent implements OnInit {
   hasFinished = false;
   leaderboardMessage: string;
 
-
-
   constructor(
-    public exercise: ExerciseDataProviderService,
-    public timer: TimerService,
+    private exercise: ExerciseDataProviderService,
+    private timer: TimerService,
     private cardEffects: CardmodifierService,
-    public router: Router) { }
+    private router: Router) { }
 
   validateInput(event: any) {
     if (event.target.value === this.exercise.data[this.exercise.number]) {
@@ -46,7 +44,7 @@ export class ExerciseareaComponent implements OnInit {
     if (this.corrections === 0) {
       this.exercise.accuracy = 100;
     } else {
-      let userAccuracy = this.expectedAccuracy - this.corrections;
+      const userAccuracy = this.expectedAccuracy - this.corrections;
       this.exercise.accuracy = Math.floor((userAccuracy / this.expectedAccuracy) * 100);
     }
     this.exercise.validateLeader();
@@ -86,6 +84,9 @@ export class ExerciseareaComponent implements OnInit {
       this.router.navigate(['select']);
     }
   }
+}
+export class Destroy implements OnDestroy {
+  constructor(public timer: TimerService, public exercise: ExerciseDataProviderService) {}
   ngOnDestroy() {
     this.timer.clearCount();
     this.exercise.isLeader = false;

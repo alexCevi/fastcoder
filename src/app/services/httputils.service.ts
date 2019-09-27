@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 interface ExerciseType {
@@ -31,15 +30,12 @@ interface Post {
   };
 }
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class HttputilsService {
 
   readonly apiConfigUrl = 'https://fast-coder-app-7948.nodechef.com/api/';
-  private exercies$: Observable<ExerciseType[]>;
-  private leaderboard$: Observable<LeaderboardData[]>;
 
   constructor(private http: HttpClient) { }
 
@@ -64,6 +60,6 @@ export class HttputilsService {
         time: userTime
       }
     };
-    this.http.put(this.apiConfigUrl + 'leaderboards' + '/' + id, data).subscribe(res => console.log(res));
+    this.http.put(this.apiConfigUrl + 'leaderboards' + '/' + id, data).subscribe();
   }
 }
